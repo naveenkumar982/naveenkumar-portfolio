@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Naveen Kumar | Engineering & Software Portfolio</title>
-    <meta name="description" content="Naveen Kumar - 3rd Year BE Student & Full-Stack Developer. Building high-performance, real-world web applications with live APIs, databases, and structured system architectures." />
-    
-    <!-- Tailwinds CSS & Google Fonts -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    
-    <!-- External Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
-    <script id="tailwind-config">
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naveen Kumar | Engineering Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -130,584 +124,616 @@
         }
       }
     </script>
-    <link rel="stylesheet" href="style.css">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-reveal {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        .border-technical {
+            border: 1px solid #000000;
+        }
+        .hover-invert:hover {
+            background-color: #000000;
+            color: #F5F5F0;
+        }
+        
+        .scanline-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.1);
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background-color: #F5F5F0;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+
+        /* Tech node styles */
+        .tech-node {
+            transition: all 0.3s ease;
+        }
+        .tech-node:hover {
+            transform: translateY(-5px);
+            border-color: #000000;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+        }
+        .tech-node-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .tech-node:hover .tech-node-content {
+            max-height: 100px;
+        }
+        
+        /* Project card hover */
+        .project-card-interactive {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .project-card-interactive:hover {
+            transform: scale(1.02);
+            border-color: #000;
+            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.15);
+        }
+    </style>
 </head>
 <body class="bg-surface text-primary selection:bg-primary selection:text-surface relative">
 <div class="scanline-overlay animate-scanline"></div>
-
 <!-- Navigation -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-primary h-20 transition-all duration-300">
-    <div class="flex justify-between items-center w-full px-gutter max-w-max-width mx-auto h-full">
-        <a class="font-headline-md text-headline-md tracking-tighter text-primary font-bold" href="#">
-            NAVEEN KUMAR
-        </a>
-        <div class="hidden md:flex gap-12 items-center">
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:opacity-60 transition-opacity" href="#about">About</a>
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:opacity-60 transition-opacity" href="#architecture">Architecture</a>
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:opacity-60 transition-opacity" href="#projects">Projects</a>
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:opacity-60 transition-opacity" href="#github">System Status</a>
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:opacity-60 transition-opacity" href="#contact">Contact</a>
-            <a class="border border-primary px-6 py-2 font-label-mono text-label-mono uppercase tracking-widest hover-invert transition-all duration-200" href="mailto:hello@naveenkumar.dev">
-                Resume
+<div class="flex justify-between items-center w-full px-gutter max-w-max-width mx-auto h-full">
+<a class="font-headline-md text-headline-md tracking-tighter text-primary" href="#">
+                NAVEEN KUMAR
             </a>
-        </div>
-        <button class="md:hidden text-primary" id="mobile-menu-toggle">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
-    </div>
-    <!-- Mobile Menu -->
-    <div class="hidden md:hidden w-full bg-surface border-b border-primary" id="mobile-menu">
-        <div class="flex flex-col px-gutter py-6 gap-6">
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant" href="#about">About</a>
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant" href="#architecture">Architecture</a>
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant" href="#projects">Projects</a>
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant" href="#github">System Status</a>
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant" href="#contact">Contact</a>
-            <a class="border border-primary px-6 py-2 font-label-mono text-label-mono text-center uppercase tracking-widest hover-invert transition-all duration-200" href="mailto:hello@naveenkumar.dev">
-                Resume
-            </a>
-        </div>
-    </div>
-</nav>
-
-<main class="pt-20">
-    <!-- Hero Section -->
-    <section class="relative min-h-[921px] flex flex-col justify-center px-gutter max-w-max-width mx-auto overflow-hidden text-surface" style="background-color: #080807;">
-        <!-- Shader Background -->
-        <canvas class="absolute inset-0 w-full h-full pointer-events-none opacity-40" id="hero-shader"></canvas>
-        <!-- 3D Node Scene -->
-        <div class="absolute inset-0 w-full h-full bg-transparent pointer-events-none opacity-60" id="hero-3d-scene"></div>
-        <div class="z-10 py-24 relative">
-            <p class="font-label-mono text-label-mono uppercase tracking-[0.3em] mb-8 text-outline-variant animate-fade-in opacity-0" style="animation-delay: 0.2s;">
-                00 — Introduction
-            </p>
-            <h1 class="font-display-xl text-display-xl max-w-4xl mb-12 animate-slide-up opacity-0" style="animation-delay: 0.4s;">
-                Naveen Kumar. <br/>
-                <span class="text-outline-variant">Engineering Precision in Software Development.</span>
-            </h1>
-            <div class="flex flex-col md:flex-row md:items-end gap-12 animate-slide-up opacity-0" style="animation-delay: 0.6s;">
-                <p class="font-body-lg text-body-lg max-w-xl text-surface-dim">
-                    3rd Year BE Student building real-world full-stack web applications. 
-                    Passionate about turning ideas into functional, beautiful products with architectural clarity.
-                </p>
-                <div class="flex-grow border-b border-outline-variant/30 mb-3 hidden md:block"></div>
-                <a class="group flex items-center gap-4 font-label-mono text-label-mono uppercase tracking-widest text-surface" href="#projects">
-                    View Projects
-                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:opacity-60 transition-opacity" href="#about">About</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:opacity-60 transition-opacity" href="#architecture">Architecture</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:opacity-60 transition-opacity" href="#projects">Projects</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:opacity-60 transition-opacity" href="#contact">Contact</a>
+<a class="border border-primary px-6 py-2 font-label-mono text-label-mono uppercase tracking-widest hover-invert transition-all duration-200" href="#">
+                    Resume
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- System Architecture Visualization Section -->
-    <section class="py-40 px-gutter max-w-max-width mx-auto border-b border-outline-variant/30" id="architecture">
-        <div class="mb-24">
-            <p class="font-label-mono text-label-mono uppercase tracking-[0.3em] mb-4 text-on-surface-variant">
-                01 — System Architecture
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col justify-center px-gutter max-w-max-width mx-auto overflow-hidden text-surface" style="background-color: #080807;">
+<!-- Shader Background -->
+<canvas class="absolute inset-0 w-full h-full pointer-events-none opacity-40" id="hero-shader"></canvas>
+<!-- 3D Node Scene -->
+<div class="absolute inset-0 w-full h-full bg-transparent pointer-events-none opacity-60" id="hero-3d-scene"></div>
+<div class="z-10 py-24 relative">
+<p class="font-label-mono text-label-mono uppercase tracking-[0.3em] mb-8 text-outline-variant animate-fade-in opacity-0" style="animation-delay: 0.2s;">
+            00 — Introduction
+        </p>
+<h1 class="font-display-xl text-display-xl max-w-4xl mb-12 animate-slide-up opacity-0" style="animation-delay: 0.4s;">
+            Naveen Kumar. <br/>
+<span class="text-outline-variant">Engineering Precision in Software Development.</span>
+</h1>
+<div class="flex flex-col md:flex-row md:items-end gap-12 animate-slide-up opacity-0" style="animation-delay: 0.6s;">
+<p class="font-body-lg text-body-lg max-w-xl text-surface-dim">
+                3rd Year BE Student building real-world full-stack web applications. 
+                Passionate about turning ideas into functional, beautiful products with architectural clarity.
             </p>
-            <h2 class="font-headline-lg text-headline-lg mb-8">Architectural Visualization</h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-                A systemic approach to full-stack development, breaking down complex applications into scalable, maintainable components across the entire stack.
-            </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            <!-- Connecting Lines (Desktop) -->
-            <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/50 -z-10"></div>
-            
-            <!-- Node 1 -->
-            <div class="tech-node bg-surface border border-outline-variant p-8 relative">
-                <div class="absolute -top-3 -left-3 w-6 h-6 bg-surface border border-primary rounded-full flex items-center justify-center">
-                    <div class="w-2 h-2 bg-primary rounded-full"></div>
-                </div>
-                <h3 class="font-label-mono text-label-mono uppercase tracking-widest mb-4">Frontend Logic</h3>
-                <p class="font-body-md text-on-surface-variant mb-4">React / JS Ecosystem</p>
-                <div class="tech-node-content">
-                    <p class="font-caption text-on-surface-variant border-t border-outline-variant/30 pt-4">State management, component architecture, and responsive interactive interfaces optimized for performance.</p>
-                </div>
-            </div>
-            
-            <!-- Node 2 -->
-            <div class="tech-node bg-surface border border-outline-variant p-8 relative">
-                <div class="absolute -top-3 -left-3 w-6 h-6 bg-surface border border-primary rounded-full flex items-center justify-center">
-                    <div class="w-2 h-2 bg-primary rounded-full"></div>
-                </div>
-                <h3 class="font-label-mono text-label-mono uppercase tracking-widest mb-4">Backend APIs</h3>
-                <p class="font-body-md text-on-surface-variant mb-4">Node.js / Python FastAPI</p>
-                <div class="tech-node-content">
-                    <p class="font-caption text-on-surface-variant border-t border-outline-variant/30 pt-4">RESTful services, API endpoints, authentication layers, and robust business logic execution.</p>
-                </div>
-            </div>
-            
-            <!-- Node 3 -->
-            <div class="tech-node bg-surface border border-outline-variant p-8 relative">
-                <div class="absolute -top-3 -left-3 w-6 h-6 bg-surface border border-primary rounded-full flex items-center justify-center">
-                    <div class="w-2 h-2 bg-primary rounded-full"></div>
-                </div>
-                <h3 class="font-label-mono text-label-mono uppercase tracking-widest mb-4">Cloud Infrastructure</h3>
-                <p class="font-body-md text-on-surface-variant mb-4">AWS / Docker / DBs</p>
-                <div class="tech-node-content">
-                    <p class="font-caption text-on-surface-variant border-t border-outline-variant/30 pt-4">Containerized deployment, scalable databases (PostgreSQL/MongoDB), and serverless architecture.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About / Terminal Section -->
-    <section class="py-40 px-gutter max-w-max-width mx-auto border-b border-outline-variant/30" id="about">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div class="lg:col-span-4">
-                <p class="font-label-mono text-label-mono uppercase tracking-[0.3em] mb-4 text-on-surface-variant">
-                    02 — Professional Profile
-                </p>
-                <h2 class="font-headline-lg text-headline-lg mb-8">Systemic Approach</h2>
-                <p class="font-body-md text-on-surface-variant">
-                    I focus on structured full-stack web development, integrating live APIs, real-time data flow, and modern minimalist interfaces. Click on the terminal window to execute commands and view status.
-                </p>
-            </div>
-            <div class="lg:col-span-8">
-                <div class="bg-carbon-text p-8 rounded-none border border-primary relative overflow-hidden group cursor-pointer" onclick="typeNextLine()">
-                    <!-- Terminal Controls -->
-                    <div class="flex gap-2 mb-6 border-b border-on-surface-variant/30 pb-4">
-                        <div class="w-2 h-2 rounded-full bg-outline"></div>
-                        <div class="w-2 h-2 rounded-full bg-outline"></div>
-                        <div class="w-2 h-2 rounded-full bg-outline"></div>
-                        <span class="ml-4 font-label-mono text-[10px] text-on-tertiary-container uppercase tracking-widest">about.json — terminal (Click to execute)</span>
-                    </div>
-                    <div class="font-label-mono text-body-md leading-relaxed text-bone-surface" id="terminal-content">
-                        <span class="text-on-primary-container">naveen@dev ~ $</span> <span class="text-bone-surface">cat about.json</span><br/><br/>
-                        <div id="typed-output">
-                            <span class="text-outline-variant">{</span><br/>
+<div class="flex-grow border-b border-outline-variant/30 mb-3 hidden md:block"></div>
+<a class="group flex items-center gap-4 font-label-mono text-label-mono uppercase tracking-widest text-surface" href="#projects">
+                View Projects
+                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- System Architecture Visualization Section -->
+<section class="py-40 px-gutter max-w-max-width mx-auto" id="architecture">
+<div class="mb-24">
+<p class="font-label-mono text-label-mono uppercase tracking-[0.3em] mb-4 text-on-surface-variant">
+            01 — System Architecture
+        </p>
+<h2 class="font-headline-lg text-headline-lg mb-8">Architectural Visualization</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+            A systemic approach to full-stack development, breaking down complex applications into scalable, maintainable components across the entire stack.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Connecting Lines (Desktop) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/50 -z-10"></div>
+<!-- Node 1 -->
+<div class="tech-node bg-surface border border-outline-variant p-8 relative">
+<div class="absolute -top-3 -left-3 w-6 h-6 bg-surface border border-primary rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+</div>
+<h3 class="font-label-mono text-label-mono uppercase tracking-widest mb-4">Frontend Logic</h3>
+<p class="font-body-md text-on-surface-variant mb-4">React / JS Ecosystem</p>
+<div class="tech-node-content">
+<p class="font-caption text-on-surface-variant border-t border-outline-variant/30 pt-4">State management, component architecture, and responsive interactive interfaces optimized for performance.</p>
+</div>
+</div>
+<!-- Node 2 -->
+<div class="tech-node bg-surface border border-outline-variant p-8 relative">
+<div class="absolute -top-3 -left-3 w-6 h-6 bg-surface border border-primary rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+</div>
+<h3 class="font-label-mono text-label-mono uppercase tracking-widest mb-4">Backend APIs</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Node.js / Python FastAPI</p>
+<div class="tech-node-content">
+<p class="font-caption text-on-surface-variant border-t border-outline-variant/30 pt-4">RESTful services, GraphQL endpoints, authentication layers, and robust business logic execution.</p>
+</div>
+</div>
+<!-- Node 3 -->
+<div class="tech-node bg-surface border border-outline-variant p-8 relative">
+<div class="absolute -top-3 -left-3 w-6 h-6 bg-surface border border-primary rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+</div>
+<h3 class="font-label-mono text-label-mono uppercase tracking-widest mb-4">Cloud Infrastructure</h3>
+<p class="font-body-md text-on-surface-variant mb-4">AWS / Docker / DBs</p>
+<div class="tech-node-content">
+<p class="font-caption text-on-surface-variant border-t border-outline-variant/30 pt-4">Containerized deployment, scalable databases (PostgreSQL/MongoDB), and serverless architecture.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About / Terminal Section -->
+<section class="py-20 px-gutter max-w-max-width mx-auto" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-4">
+<p class="font-label-mono text-label-mono uppercase tracking-[0.3em] mb-4 text-on-surface-variant">
+                        02 — Professional Profile
+                    </p>
+<h2 class="font-headline-lg text-headline-lg mb-8">Systemic Approach</h2>
+</div>
+<div class="lg:col-span-8">
+<div class="bg-carbon-text p-8 rounded-none border border-primary relative overflow-hidden group cursor-pointer" onclick="typeNextLine()">
+<!-- Terminal Controls -->
+<div class="flex gap-2 mb-6 border-b border-on-surface-variant/30 pb-4">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<span class="ml-4 font-label-mono text-[10px] text-on-tertiary-container uppercase tracking-widest">about.json — terminal (Click to execute)</span>
+</div>
+<div class="font-label-mono text-body-md leading-relaxed text-bone-surface" id="terminal-content">
+<span class="text-on-primary-container">naveen@dev ~ $</span> <span class="text-bone-surface">cat about.json</span><br/><br/>
+<div id="typed-output">
+<span class="text-outline-variant">{</span><br/>
                             &nbsp;&nbsp;<span class="text-on-tertiary-container">"name"</span>: <span class="text-bone-surface">"Naveen Kumar"</span>,<br/>
                             &nbsp;&nbsp;<span class="text-on-tertiary-container">"role"</span>: <span class="text-bone-surface">"3rd Year BE Student"</span>,<br/>
                             &nbsp;&nbsp;<span class="text-on-tertiary-container">"focus"</span>: <span class="text-bone-surface">"Full-Stack Web Development"</span>,<br/>
                             &nbsp;&nbsp;<span class="text-on-tertiary-container">"tech"</span>: <span class="text-outline-variant">[</span><span class="text-bone-surface">"JavaScript", "APIs", "Cloud"</span><span class="text-outline-variant">]</span>,<br/>
                             &nbsp;&nbsp;<span class="text-on-tertiary-container">"building"</span>: <span class="text-bone-surface">"Real-world products 🚀"</span><br/>
-                            <span class="text-outline-variant">}</span>
-                        </div>
-                        <span class="text-on-primary-container mt-4 block">naveen@dev ~ $ <span class="cursor animate-pulse-cursor"></span></span>
-                    </div>
-                    <!-- Decorative background element -->
-                    <div class="absolute -right-20 -bottom-20 w-64 h-64 border border-on-surface-variant/10 rounded-full group-hover:scale-110 transition-transform duration-700"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Selected Works -->
-    <section class="py-40 bg-surface-container-low border-b border-outline-variant/30" id="projects">
-        <div class="px-gutter max-w-max-width mx-auto">
-            <div class="flex justify-between items-end mb-24">
-                <div>
-                    <p class="font-label-mono text-label-mono uppercase tracking-[0.3em] mb-4 text-on-surface-variant">
-                        03 — Selected Works
-                    </p>
-                    <h2 class="font-headline-lg text-headline-lg">Featured Systems</h2>
-                </div>
-                <div class="hidden md:block">
-                    <p class="font-label-mono text-label-mono text-on-surface-variant text-right">06 / 06 COMPLETED</p>
-                </div>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Project Card 1: SkyPulse -->
-                <div class="group relative bg-surface border border-outline-variant p-2 overflow-hidden project-card-interactive flex flex-col justify-between">
-                    <div>
-                        <div class="aspect-[16/10] overflow-hidden mb-8 relative">
-                            <img alt="SkyPulse Dashboard" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=800&q=80"/>
-                            <div class="absolute top-4 right-4 bg-surface px-4 py-1 font-label-mono text-[10px] border border-primary">LIVE NOW</div>
-                        </div>
-                        <div class="px-6 pb-2">
-                            <div class="flex justify-between items-start mb-6">
-                                <h3 class="font-headline-md text-headline-md font-bold">SkyPulse — Weather Dashboard</h3>
-                                <div class="flex gap-2">
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">JS</span>
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">REST API</span>
-                                </div>
-                            </div>
-                            <p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
-                                Real-time weather dashboard powered by Open-Meteo API. Shows live current weather, 24-hour & 7-day forecasts, air quality index, city search with autocomplete, geolocation, and embedded OpenStreetMap.
+<span class="text-outline-variant">}</span>
+</div>
+<span class="text-on-primary-container mt-4 block">naveen@dev ~ $ <span class="cursor animate-pulse-cursor"></span></span>
+</div>
+<!-- Decorative background element -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 border border-on-surface-variant/10 rounded-full group-hover:scale-110 transition-transform duration-700"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<section class="py-40 bg-surface-container-low" id="projects">
+<div class="px-gutter max-w-max-width mx-auto">
+<div class="flex justify-between items-end mb-24">
+<div>
+<p class="font-label-mono text-label-mono uppercase tracking-[0.3em] mb-4 text-on-surface-variant">
+                            03 — Selected Works
+                        </p>
+<h2 class="font-headline-lg text-headline-lg">Featured Systems</h2>
+</div>
+<div class="hidden md:block">
+<p class="font-label-mono text-label-mono text-on-surface-variant text-right">02 / 10 COMPLETED</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Project Card 1: SkyPulse -->
+<div class="group relative bg-surface border border-outline-variant p-2 overflow-hidden project-card-interactive">
+<div class="aspect-[16/10] overflow-hidden mb-8 relative">
+<img alt="SkyPulse Dashboard" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgTXKMoicc_bSs5wQ-Y8b30sR5Nz9romDkIMj8qYBHhnIcIacb4B7LkB2q2X3_4rbkXOZEgj-9B9pl4wRaeCXZRpr02xnsPhCO_dcXd6i8Lxb7vXY1ZJ7kg5mSCHfG9bHkNn0sK9wug1lHlI491lc-TOsIJE_4yLCdFgaefYSj-ZmpublsSBVZDY72LfrChfXjIyMyriAyCQSrD5Mo06zbfZY_m1cRktzJ2scyDKBo5M8JpfulTmU0U0zgXQaZE9BwMUPm1Ioauksg"/>
+<div class="absolute top-4 right-4 bg-surface px-4 py-1 font-label-mono text-[10px] border border-primary">LIVE NOW</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline-md text-headline-md">SkyPulse — Weather Dashboard</h3>
+<div class="flex gap-2">
+<span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">JS</span>
+<span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">REST API</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-2">
+                                Real-time atmospheric data processing with 24-hour and 7-day precise forecasting powered by Open-Meteo.
                             </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-6 border-t border-outline-variant mt-auto">
-                        <div class="flex items-center justify-between">
-                            <a class="font-label-mono text-label-mono uppercase tracking-widest hover:underline underline-offset-4" href="https://naveenkumar982.github.io/weather-dashboard/" target="_blank">Live Demo</a>
-                            <div class="flex gap-4">
-                                <a href="https://github.com/naveenkumar982/weather-dashboard" target="_blank" title="Source Code">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">code</span>
-                                </a>
-                                <a href="https://naveenkumar982.github.io/weather-dashboard/" target="_blank" title="Live Site">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">open_in_new</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2: NexusAI -->
-                <div class="group relative bg-surface border border-outline-variant p-2 overflow-hidden project-card-interactive flex flex-col justify-between">
-                    <div>
-                        <div class="aspect-[16/10] overflow-hidden mb-8 relative">
-                            <img alt="NexusAI Interface" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80"/>
-                            <div class="absolute top-4 right-4 bg-surface px-4 py-1 font-label-mono text-[10px] border border-primary">LIVE NOW</div>
-                        </div>
-                        <div class="px-6 pb-2">
-                            <div class="flex justify-between items-start mb-6">
-                                <h3 class="font-headline-md text-headline-md font-bold">NexusAI — Chat Assistant</h3>
-                                <div class="flex gap-2">
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">GEMINI</span>
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">LLM</span>
-                                </div>
-                            </div>
-                            <p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
-                                AI chatbot powered by Google Gemini API. Offers markdown rendering, code syntax highlighting, multiple chat threads, model selection parameters, and local conversation history state management.
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant">
+<a class="font-label-mono text-label-mono uppercase tracking-widest hover:underline underline-offset-4" href="#">Case Study</a>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">code</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">open_in_new</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project Card 2: NexusAI -->
+<div class="group relative bg-surface border border-outline-variant p-2 overflow-hidden project-card-interactive">
+<div class="aspect-[16/10] overflow-hidden mb-8 relative">
+<img alt="NexusAI Interface" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxsxW93_wb63LZltsAHJ4s624V9jy5U1-k6RMVJKEPv7OG-wSWiTiP_pZQOsTxQNS-Ah3u9axdO_ch4oyB-KFcjRnwgLXNavUpuv7mjtCNxsEkuw08uIMzGkTGcbtpVkwQXYLpt3_4EIgl7AIAPFb5KyMizykadd8SEDCpZ_NyrTq-qR4wH6yU-cwoboNNLllmQF65KCalevXlv0H9AvVBdj3axeaVAH203Fu26kIpH92McQXMxzABlv8rUdfB9EKFDFE0jf6P7RF1"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline-md text-headline-md">NexusAI — Chat Assistant</h3>
+<div class="flex gap-2">
+<span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">GEMINI</span>
+<span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">LLM</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-2">
+                                High-performance AI interface featuring markdown rendering, model selection, and secure conversation state management.
                             </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-6 border-t border-outline-variant mt-auto">
-                        <div class="flex items-center justify-between">
-                            <a class="font-label-mono text-label-mono uppercase tracking-widest hover:underline underline-offset-4" href="https://naveenkumar982.github.io/ai-chat-assistant/" target="_blank">Live Demo</a>
-                            <div class="flex gap-4">
-                                <a href="https://github.com/naveenkumar982/ai-chat-assistant" target="_blank" title="Source Code">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">code</span>
-                                </a>
-                                <a href="https://naveenkumar982.github.io/ai-chat-assistant/" target="_blank" title="Live Site">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">open_in_new</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 3: FinTrack -->
-                <div class="group relative bg-surface border border-outline-variant p-2 overflow-hidden project-card-interactive flex flex-col justify-between">
-                    <div>
-                        <div class="aspect-[16/10] overflow-hidden mb-8 relative">
-                            <img alt="FinTrack Dashboard" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"/>
-                            <div class="absolute top-4 right-4 bg-surface px-4 py-1 font-label-mono text-[10px] border border-primary">LIVE NOW</div>
-                        </div>
-                        <div class="px-6 pb-2">
-                            <div class="flex justify-between items-start mb-6">
-                                <h3 class="font-headline-md text-headline-md font-bold">FinTrack — Expense Dashboard</h3>
-                                <div class="flex gap-2">
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">CHART.JS</span>
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">CRUD</span>
-                                </div>
-                            </div>
-                            <p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
-                                Smart financial tracking system. Supports full transaction CRUD operations, budget goals with visual progress bars, monthly analytics trends via Chart.js, category filters, and CSV export.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-6 border-t border-outline-variant mt-auto">
-                        <div class="flex items-center justify-between">
-                            <a class="font-label-mono text-label-mono uppercase tracking-widest hover:underline underline-offset-4" href="https://naveenkumar982.github.io/expense-tracker-dashboard/" target="_blank">Live Demo</a>
-                            <div class="flex gap-4">
-                                <a href="https://github.com/naveenkumar982/expense-tracker-dashboard" target="_blank" title="Source Code">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">code</span>
-                                </a>
-                                <a href="https://naveenkumar982.github.io/expense-tracker-dashboard/" target="_blank" title="Live Site">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">open_in_new</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 4: TaskFlow -->
-                <div class="group relative bg-surface border border-outline-variant p-2 overflow-hidden project-card-interactive flex flex-col justify-between">
-                    <div>
-                        <div class="aspect-[16/10] overflow-hidden mb-8 relative">
-                            <img alt="TaskFlow Kanban" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80"/>
-                            <div class="absolute top-4 right-4 bg-surface px-4 py-1 font-label-mono text-[10px] border border-primary">LIVE NOW</div>
-                        </div>
-                        <div class="px-6 pb-2">
-                            <div class="flex justify-between items-start mb-6">
-                                <h3 class="font-headline-md text-headline-md font-bold">TaskFlow — Project Board</h3>
-                                <div class="flex gap-2">
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">DRAG & DROP</span>
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">JSON</span>
-                                </div>
-                            </div>
-                            <p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
-                                Fully functional Kanban task board with 5 column states, native HTML5 drag-and-drop support, subtask checklists, priority configurations, task search filters, and JSON export/import backups.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-6 border-t border-outline-variant mt-auto">
-                        <div class="flex items-center justify-between">
-                            <a class="font-label-mono text-label-mono uppercase tracking-widest hover:underline underline-offset-4" href="https://naveenkumar982.github.io/kanban-task-board/" target="_blank">Live Demo</a>
-                            <div class="flex gap-4">
-                                <a href="https://github.com/naveenkumar982/kanban-task-board" target="_blank" title="Source Code">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">code</span>
-                                </a>
-                                <a href="https://naveenkumar982.github.io/kanban-task-board/" target="_blank" title="Live Site">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">open_in_new</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 5: DevInk -->
-                <div class="group relative bg-surface border border-outline-variant p-2 overflow-hidden project-card-interactive flex flex-col justify-between">
-                    <div>
-                        <div class="aspect-[16/10] overflow-hidden mb-8 relative">
-                            <img alt="DevInk Blog" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80"/>
-                            <div class="absolute top-4 right-4 bg-surface px-4 py-1 font-label-mono text-[10px] border border-primary">LIVE NOW</div>
-                        </div>
-                        <div class="px-6 pb-2">
-                            <div class="flex justify-between items-start mb-6">
-                                <h3 class="font-headline-md text-headline-md font-bold">DevInk — Blog Platform</h3>
-                                <div class="flex gap-2">
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">MARKDOWN</span>
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">ANALYTICS</span>
-                                </div>
-                            </div>
-                            <p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
-                                Editorial writing environment with markdown editor + side preview rendering. Contains a custom analytics tab tracking read times, total likes, post views, and category tags.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-6 border-t border-outline-variant mt-auto">
-                        <div class="flex items-center justify-between">
-                            <a class="font-label-mono text-label-mono uppercase tracking-widest hover:underline underline-offset-4" href="https://naveenkumar982.github.io/blog-platform/" target="_blank">Live Demo</a>
-                            <div class="flex gap-4">
-                                <a href="https://github.com/naveenkumar982/blog-platform" target="_blank" title="Source Code">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">code</span>
-                                </a>
-                                <a href="https://naveenkumar982.github.io/blog-platform/" target="_blank" title="Live Site">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">open_in_new</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 6: CodeVault -->
-                <div class="group relative bg-surface border border-outline-variant p-2 overflow-hidden project-card-interactive flex flex-col justify-between">
-                    <div>
-                        <div class="aspect-[16/10] overflow-hidden mb-8 relative">
-                            <img alt="CodeVault App" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80"/>
-                            <div class="absolute top-4 right-4 bg-surface px-4 py-1 font-label-mono text-[10px] border border-primary">LIVE NOW</div>
-                        </div>
-                        <div class="px-6 pb-2">
-                            <div class="flex justify-between items-start mb-6">
-                                <h3 class="font-headline-md text-headline-md font-bold">CodeVault — Snippet Manager</h3>
-                                <div class="flex gap-2">
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">LOCALSTORAGE</span>
-                                    <span class="font-label-mono text-[10px] border border-outline px-2 py-0.5">SYNTAX</span>
-                                </div>
-                            </div>
-                            <p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
-                                Beautiful snippet vault to save, categorize, and copy frequently used code blocks. Integrates syntax highlighting themes, categorizations, and code copying utility.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-6 border-t border-outline-variant mt-auto">
-                        <div class="flex items-center justify-between">
-                            <a class="font-label-mono text-label-mono uppercase tracking-widest hover:underline underline-offset-4" href="https://naveenkumar982.github.io/code-snippet-manager/" target="_blank">Live Demo</a>
-                            <div class="flex gap-4">
-                                <a href="https://github.com/naveenkumar982/code-snippet-manager" target="_blank" title="Source Code">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">code</span>
-                                </a>
-                                <a href="https://naveenkumar982.github.io/code-snippet-manager/" target="_blank" title="Live Site">
-                                    <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">open_in_new</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Stack / Core Competencies -->
-    <section class="py-40 px-gutter max-w-max-width mx-auto border-b border-outline-variant/30" id="skills">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 border-b border-primary pb-8">
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant">
+<a class="font-label-mono text-label-mono uppercase tracking-widest hover:underline underline-offset-4" href="#">Case Study</a>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">code</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">open_in_new</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-20 text-center">
+<a class="inline-block border border-primary px-12 py-4 font-label-mono text-label-mono uppercase tracking-widest hover-invert transition-all duration-200" href="#">
+                        View Archive (10+)
+                    </a>
+</div>
+</div>
+</section>
+<!-- Tech Stack -->
+<section class="py-40 px-gutter max-w-max-width mx-auto" id="skills">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 border-b border-primary pb-8">
             <div>
                 <p class="font-label-mono text-label-mono uppercase tracking-[0.3em] mb-4 text-on-surface-variant">
                     04 — Core Competencies
                 </p>
-                <h2 class="font-headline-lg text-headline-lg">Tech Stack</h2>
+                <h2 class="font-headline-lg text-headline-lg">Tech Ecosystem</h2>
             </div>
             <p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-4 md:mt-0">
                 A rigorous selection of tools optimized for modern performance, scalability, and engineering excellence.
             </p>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[1px] bg-primary border border-primary">
-            <div class="bg-surface p-10 hover:bg-surface-container transition-colors duration-200 flex flex-col items-center text-center group">
-                <div class="mb-6 group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-[40px]">code</span>
-                </div>
-                <h4 class="font-label-mono text-label-mono uppercase tracking-widest mb-2 font-bold">Python</h4>
-                <p class="font-caption text-caption text-on-surface-variant">FastAPI, Flask, Pandas, ML</p>
-            </div>
-            <div class="bg-surface p-10 hover:bg-surface-container transition-colors duration-200 flex flex-col items-center text-center group">
-                <div class="mb-6 group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-[40px]">cloud</span>
-                </div>
-                <h4 class="font-label-mono text-label-mono uppercase tracking-widest mb-2 font-bold">AWS</h4>
-                <p class="font-caption text-caption text-on-surface-variant">Lambda, S3, Kinesis, ECR</p>
-            </div>
-            <div class="bg-surface p-10 hover:bg-surface-container transition-colors duration-200 flex flex-col items-center text-center group">
-                <div class="mb-6 group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-[40px]">token</span>
-                </div>
-                <h4 class="font-label-mono text-label-mono uppercase tracking-widest mb-2 font-bold">Docker</h4>
-                <p class="font-caption text-caption text-on-surface-variant">CI/CD, Containerization</p>
-            </div>
-            <div class="bg-surface p-10 hover:bg-surface-container transition-colors duration-200 flex flex-col items-center text-center group">
-                <div class="mb-6 group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-[40px]">memory</span>
-                </div>
-                <h4 class="font-label-mono text-label-mono uppercase tracking-widest mb-2 font-bold">Machine Learning</h4>
-                <p class="font-caption text-caption text-on-surface-variant">MLOps, MLflow, Deployment</p>
-            </div>
-            <div class="bg-surface p-10 hover:bg-surface-container transition-colors duration-200 flex flex-col items-center text-center group">
-                <div class="mb-6 group-hover:scale-110 transition-transform">
-                    <span class="material-symbols-outlined text-[40px]">terminal</span>
-                </div>
-                <h4 class="font-label-mono text-label-mono uppercase tracking-widest mb-2 font-bold">JavaScript</h4>
-                <p class="font-caption text-caption text-on-surface-variant">ES6+, DOM, APIs, Chart.js</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- System Status / GitHub Stats Section -->
-    <section class="py-40 bg-surface-container-low border-b border-outline-variant/30" id="github">
-        <div class="px-gutter max-w-max-width mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 pb-8 border-b border-primary">
-                <div>
-                    <p class="font-label-mono text-label-mono uppercase tracking-[0.3em] mb-4 text-on-surface-variant">
-                        05 — System Status
-                    </p>
-                    <h2 class="font-headline-lg text-headline-lg">GitHub Activity</h2>
-                </div>
-                <p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-4 md:mt-0">
-                    Live metrics fetched directly from the GitHub API representing active repositories and language usage.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                <!-- Profile Info Card -->
-                <div class="lg:col-span-4 border border-primary p-8 bg-surface flex flex-col justify-between">
-                    <div class="flex items-center gap-6">
-                        <img class="w-16 h-16 border border-primary grayscale" id="ghAvatar" src="" alt="GitHub Avatar">
-                        <div>
-                            <h3 class="font-headline-md text-headline-md tracking-tight font-bold" id="ghName">Loading...</h3>
-                            <p class="font-label-mono text-[10px] text-on-surface-variant uppercase mt-1">@naveenkumar982</p>
-                        </div>
-                    </div>
-                    <p class="font-body-md text-on-surface-variant mt-8" id="ghBio">Loading profile bio...</p>
-                    <div class="mt-8 pt-6 border-t border-outline-variant/30">
-                        <a class="font-label-mono text-label-mono uppercase tracking-widest hover:underline underline-offset-4 flex items-center gap-2" href="https://github.com/naveenkumar982" target="_blank">
-                            Open GitHub
-                            <span class="material-symbols-outlined text-sm">open_in_new</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Stats Grid -->
-                <div class="lg:col-span-8 grid grid-cols-2 gap-4">
-                    <div class="border border-primary p-8 bg-surface flex flex-col justify-between">
-                        <span class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant">Active Repos</span>
-                        <span class="font-display-xl text-display-xl mt-4 font-bold" id="ghRepos">—</span>
-                    </div>
-                    <div class="border border-primary p-8 bg-surface flex flex-col justify-between">
-                        <span class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant">Followers</span>
-                        <span class="font-display-xl text-display-xl mt-4 font-bold" id="ghFollowers">—</span>
-                    </div>
-                    <div class="border border-primary p-8 bg-surface flex flex-col justify-between">
-                        <span class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant">Total Stars</span>
-                        <span class="font-display-xl text-display-xl mt-4 font-bold" id="ghStars">—</span>
-                    </div>
-                    <div class="border border-primary p-8 bg-surface flex flex-col justify-between">
-                        <span class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant">Contributions</span>
-                        <span class="font-display-xl text-display-xl mt-4 font-bold" id="ghContributions">—</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-8 border border-primary p-8 bg-surface">
-                <h4 class="font-label-mono text-label-mono uppercase tracking-widest mb-6 text-on-surface-variant">Top Languages</h4>
-                <div class="flex flex-wrap gap-3" id="ghLanguages">
-                    <span class="font-label-mono text-[10px] border border-outline px-3 py-1 bg-surface-container-low animate-pulse">Loading languages...</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA / Contact Section -->
-    <section class="py-40 bg-carbon-text text-bone-surface" id="contact">
-        <div class="px-gutter max-w-max-width mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <p class="font-label-mono text-label-mono uppercase tracking-[0.5em] mb-12 text-on-primary-container">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[1px] bg-primary border border-primary">
+<div class="bg-surface p-10 hover:bg-surface-container transition-colors duration-200 flex flex-col items-center text-center group">
+<div class="mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[40px]">code</span>
+</div>
+<h4 class="font-label-mono text-label-mono uppercase tracking-widest mb-2">Python</h4>
+<p class="font-caption text-caption text-on-surface-variant">FastAPI, Pandas, ML</p>
+</div>
+<div class="bg-surface p-10 hover:bg-surface-container transition-colors duration-200 flex flex-col items-center text-center group">
+<div class="mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[40px]">cloud</span>
+</div>
+<h4 class="font-label-mono text-label-mono uppercase tracking-widest mb-2">AWS</h4>
+<p class="font-caption text-caption text-on-surface-variant">Lambda, S3, ECR</p>
+</div>
+<div class="bg-surface p-10 hover:bg-surface-container transition-colors duration-200 flex flex-col items-center text-center group">
+<div class="mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[40px]">token</span>
+</div>
+<h4 class="font-label-mono text-label-mono uppercase tracking-widest mb-2">Docker</h4>
+<p class="font-caption text-caption text-on-surface-variant">CI/CD, Containers</p>
+</div>
+<div class="bg-surface p-10 hover:bg-surface-container transition-colors duration-200 flex flex-col items-center text-center group">
+<div class="mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[40px]">memory</span>
+</div>
+<h4 class="font-label-mono text-label-mono uppercase tracking-widest mb-2">Machine Learning</h4>
+<p class="font-caption text-caption text-on-surface-variant">MLOps, MLflow</p>
+</div>
+<div class="bg-surface p-10 hover:bg-surface-container transition-colors duration-200 flex flex-col items-center text-center group">
+<div class="mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[40px]">terminal</span>
+</div>
+<h4 class="font-label-mono text-label-mono uppercase tracking-widest mb-2">JavaScript</h4>
+<p class="font-caption text-caption text-on-surface-variant">ES6+, DOM, Chart.js</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-40 bg-carbon-text text-bone-surface" id="contact">
+<div class="px-gutter max-w-max-width mx-auto text-center">
+<p class="font-label-mono text-label-mono uppercase tracking-[0.5em] mb-12 text-on-primary-container">
                     READY FOR COLLABORATION
                 </p>
-                <h2 class="font-display-xl text-display-xl mb-16">Let's build something <br/> remarkable.</h2>
-                <div class="flex flex-col md:flex-row justify-center gap-8 mb-20">
-                    <a class="border border-bone-surface px-12 py-5 font-label-mono text-label-mono uppercase tracking-widest hover:bg-bone-surface hover:text-carbon-text transition-all duration-300" href="mailto:hello@naveenkumar.dev">
+<h2 class="font-display-xl text-display-xl mb-16">Let's build something <br/> remarkable.</h2>
+<div class="flex flex-col md:flex-row justify-center gap-8">
+<a class="border border-bone-surface px-12 py-5 font-label-mono text-label-mono uppercase tracking-widest hover:bg-bone-surface hover:text-carbon-text transition-all duration-300" href="mailto:contact@naveenkumar.dev">
                         Drop an Email
                     </a>
-                    <a class="border border-bone-surface px-12 py-5 font-label-mono text-label-mono uppercase tracking-widest hover:bg-bone-surface hover:text-carbon-text transition-all duration-300" href="https://linkedin.com/in/naveenkumar982" target="_blank">
+<a class="border border-bone-surface px-12 py-5 font-label-mono text-label-mono uppercase tracking-widest hover:bg-bone-surface hover:text-carbon-text transition-all duration-300" href="#">
                         LinkedIn
                     </a>
-                </div>
-            </div>
-
-            <!-- Contact Form Card -->
-            <div class="max-w-2xl mx-auto border border-primary-fixed-dim/30 p-8 bg-white/5 backdrop-blur-md">
-                <h3 class="font-label-mono text-label-mono uppercase tracking-widest mb-8 text-white">Send a Message</h3>
-                <form id="contactForm" class="flex flex-col gap-6" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="eb7dc40a-53a9-423c-b043-5f046aa8b7c3">
-                    <input type="hidden" name="subject" value="Stitch Portfolio Contact Form">
-                    <input type="hidden" name="from_name" value="Engineering Portfolio">
-                    
-                    <div class="flex flex-col gap-2">
-                        <label for="contactName" class="font-label-mono text-[10px] text-on-primary-container uppercase tracking-wider">Name</label>
-                        <input type="text" id="contactName" name="name" class="w-full bg-white/5 border border-primary-fixed-dim/30 px-4 py-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="Your Name" required>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <label for="contactEmail" class="font-label-mono text-[10px] text-on-primary-container uppercase tracking-wider">Email</label>
-                        <input type="email" id="contactEmail" name="email" class="w-full bg-white/5 border border-primary-fixed-dim/30 px-4 py-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="your@email.com" required>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <label for="contactMessage" class="font-label-mono text-[10px] text-on-primary-container uppercase tracking-wider">Message</label>
-                        <textarea id="contactMessage" name="message" rows="4" class="w-full bg-white/5 border border-primary-fixed-dim/30 px-4 py-3 text-white focus:outline-none focus:border-white transition-colors resize-vertical" placeholder="Your Message..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="border border-bone-surface px-8 py-4 font-label-mono text-label-mono uppercase tracking-widest bg-bone-surface text-carbon-text hover:bg-transparent hover:text-bone-surface transition-all duration-300 w-full text-center mt-4" id="contactSubmit">
-                        <span id="submitText">Send Message →</span>
-                        <span id="submitLoading" style="display:none">Sending...</span>
-                    </button>
-                    <p class="form-status font-label-mono text-xs text-center mt-2" id="formStatus"></p>
-                </form>
-            </div>
-        </div>
-    </section>
+</div>
+</div>
+</section>
 </main>
-
 <!-- Footer -->
 <footer class="bg-surface w-full pt-margin-safe pb-gutter border-t border-primary">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center w-full px-gutter max-w-max-width mx-auto gap-unit">
-        <div class="mb-8 md:mb-0">
-            <span class="font-headline-md text-headline-md text-primary tracking-tighter font-bold">NAVEEN KUMAR</span>
-            <p class="font-label-mono text-[10px] text-on-surface-variant mt-2">ENGINEERING PORTFOLIO &copy; 2026</p>
-        </div>
-        <div class="flex flex-wrap gap-8">
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-colors" href="https://github.com/naveenkumar982" target="_blank">GitHub</a>
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-colors" href="https://linkedin.com/in/naveenkumar982" target="_blank">LinkedIn</a>
-            <a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-colors" href="mailto:hello@naveenkumar.dev">Email</a>
-        </div>
-    </div>
-    <div class="w-full px-gutter max-w-max-width mx-auto mt-16 pt-8 border-t border-outline-variant/30 text-center">
-        <p class="font-label-mono text-[10px] text-on-tertiary-container uppercase tracking-widest">
-            ALL RIGHTS RESERVED. DESIGNED WITH PRECISION.
-        </p>
-    </div>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center w-full px-gutter max-w-max-width mx-auto gap-unit">
+<div class="mb-8 md:mb-0">
+<span class="font-headline-md text-headline-md text-primary tracking-tighter">NAVEEN KUMAR</span>
+<p class="font-label-mono text-[10px] text-on-surface-variant mt-2">ENGINEERING PORTFOLIO © 2026</p>
+</div>
+<div class="flex flex-wrap gap-8">
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-colors" href="https://github.com/naveenkumar982">GitHub</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-colors" href="#">LinkedIn</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-colors" href="#">Twitter</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-primary underline decoration-1 underline-offset-4 transition-colors" href="mailto:hello@naveenkumar.dev">Email</a>
+</div>
+</div>
+<div class="w-full px-gutter max-w-max-width mx-auto mt-16 pt-8 border-t border-outline-variant/30 text-center">
+<p class="font-label-mono text-[10px] text-on-tertiary-container uppercase tracking-widest">
+                ALL RIGHTS RESERVED. DESIGNED WITH PRECISION.
+            </p>
+</div>
 </footer>
+<script>
+    // --- Hero Shader (WebGL) ---
+    const canvas = document.getElementById('hero-shader');
+    const gl = canvas.getContext('webgl');
 
-<script src="script.js"></script>
+    if (gl) {
+        // Vertex shader
+        const vsSource = `
+            attribute vec4 a_position;
+            varying vec2 v_texCoord;
+            void main() {
+                gl_Position = a_position;
+                v_texCoord = a_position.xy * 0.5 + 0.5;
+            }
+        `;
+
+        // Fragment shader (from requested animation 9)
+        const fsSource = `
+            precision highp float;
+            varying vec2 v_texCoord;
+            uniform float u_time;
+            uniform vec2 u_resolution;
+            uniform vec2 u_mouse;
+
+            float grid(vec2 uv, float spacing) {
+                vec2 grid = abs(fract(uv / spacing - 0.5) - 0.5) / fwidth(uv / spacing);
+                return 1.0 - min(grid.x, grid.y);
+            }
+
+            void main() {
+                vec2 uv = v_texCoord;
+                vec2 mouse = u_mouse / u_resolution;
+                
+                // Base color from design system: #080807 (almost black)
+                vec3 backgroundColor = vec3(0.03, 0.03, 0.027);
+                
+                // Moving grid
+                float g1 = grid(uv + vec2(u_time * 0.02, 0.0), 0.1);
+                float g2 = grid(uv - vec2(0.0, u_time * 0.01), 0.05);
+                
+                vec3 color = backgroundColor;
+                
+                // Accent lines color (subtle grey)
+                vec3 lineColor = vec3(0.2, 0.2, 0.18);
+                color = mix(color, lineColor, g1 * 0.1);
+                color = mix(color, lineColor, g2 * 0.05);
+                
+                // Mouse glow effect
+                float dist = distance(uv, mouse);
+                float glow = smoothstep(0.4, 0.0, dist);
+                color += glow * vec3(0.1, 0.1, 0.08);
+                
+                gl_FragColor = vec4(color, 1.0);
+            }
+        `;
+
+        function createShader(gl, type, source) {
+            const shader = gl.createShader(type);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+            return shader;
+        }
+
+        const vertexShader = createShader(gl, gl.VERTEX_SHADER, vsSource);
+        const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fsSource);
+
+        const program = gl.createProgram();
+        gl.attachShader(program, vertexShader);
+        gl.attachShader(program, fragmentShader);
+        gl.linkProgram(program);
+        gl.useProgram(program);
+
+        const positionBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+        const positions = [
+            -1.0, -1.0,
+             1.0, -1.0,
+            -1.0,  1.0,
+            -1.0,  1.0,
+             1.0, -1.0,
+             1.0,  1.0,
+        ];
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+
+        const positionAttributeLocation = gl.getAttribLocation(program, "a_position");
+        gl.enableVertexAttribArray(positionAttributeLocation);
+        gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+
+        const timeUniformLocation = gl.getUniformLocation(program, "u_time");
+        const resolutionUniformLocation = gl.getUniformLocation(program, "u_resolution");
+        const mouseUniformLocation = gl.getUniformLocation(program, "u_mouse");
+
+        let mouseX = 0;
+        let mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = window.innerHeight - e.clientY;
+        });
+
+        function render(time) {
+            canvas.width = window.innerWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+            gl.viewport(0, 0, canvas.width, canvas.height);
+
+            gl.uniform1f(timeUniformLocation, time * 0.001);
+            gl.uniform2f(resolutionUniformLocation, canvas.width, canvas.height);
+            gl.uniform2f(mouseUniformLocation, mouseX, mouseY);
+
+            gl.drawArrays(gl.TRIANGLES, 0, 6);
+            requestAnimationFrame(render);
+        }
+        requestAnimationFrame(render);
+        
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+        });
+    }
+
+    // --- Hero 3D Scene (Three.js) ---
+    const container = document.getElementById('hero-3d-scene');
+    if (typeof THREE !== 'undefined' && container) {
+        const width = container.clientWidth || window.innerWidth;
+        const height = container.clientHeight || window.innerHeight;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+        renderer.setSize(width, height);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        container.appendChild(renderer.domElement);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // Adjusted colors for dark background visibility
+        const coreGeom = new THREE.IcosahedronGeometry(1.5, 1);
+        const coreMat = new THREE.MeshPhongMaterial({ 
+            color: 0x444444, 
+            wireframe: true,
+            emissive: 0x111111
+        });
+        const core = new THREE.Mesh(coreGeom, coreMat);
+        group.add(core);
+
+        const ringGeom = new THREE.TorusGeometry(2.5, 0.02, 16, 100);
+        const ringMat = new THREE.MeshBasicMaterial({ color: 0xaaaaaa, transparent: true, opacity: 0.2 });
+
+        for (let i = 0; i < 3; i++) {
+            const ring = new THREE.Mesh(ringGeom, ringMat);
+            ring.rotation.x = Math.random() * Math.PI;
+            ring.rotation.y = Math.random() * Math.PI;
+            group.add(ring);
+        }
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 1);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        // Position to the right
+        group.position.x = 4;
+        camera.position.z = 8;
+
+        let mouseX = 0, mouseY = 0;
+        window.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            group.rotation.y += 0.003;
+            group.rotation.x += 0.002;
+            
+            group.position.x += (4 + mouseX * 0.5 - group.position.x) * 0.05;
+            group.position.y += (mouseY * 0.5 - group.position.y) * 0.05;
+            
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            const w = container.clientWidth || window.innerWidth;
+            const h = container.clientHeight || window.innerHeight;
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h);
+        });
+    }
+
+    // --- Dynamic Terminal Effect ---
+    let terminalLines = [
+        '<span class="text-on-primary-container">naveen@dev ~ $</span> <span class="text-bone-surface">cat status.txt</span>',
+        '<span class="text-outline-variant">Loading modules...</span>',
+        '<span class="text-outline-variant">[OK] Database connected</span>',
+        '<span class="text-outline-variant">[OK] API Endpoints active</span>',
+        '<span class="text-bone-surface">System optimal. Ready for input.</span>'
+    ];
+    let currentLine = 0;
+    
+    function typeNextLine() {
+        if(currentLine < terminalLines.length) {
+            const terminal = document.getElementById('typed-output');
+            const newLine = document.createElement('div');
+            newLine.innerHTML = terminalLines[currentLine] + '<br/>';
+            terminal.appendChild(newLine);
+            currentLine++;
+        }
+    }
+
+    // --- General Interactions ---
+    document.addEventListener('DOMContentLoaded', () => {
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('h-16');
+                nav.classList.remove('h-20');
+            } else {
+                nav.classList.add('h-20');
+                nav.classList.remove('h-16');
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section:not(:first-child)').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    });
+</script>
 </body>
 </html>
