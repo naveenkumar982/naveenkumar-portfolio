@@ -42,38 +42,76 @@
     };
 
     // Create particles — keep count low for performance
-    for (let i = 0; i < 60; i++) particles.push(new Particle());
+    for (let i = 0; i < 40; i++) particles.push(new Particle());
+
+    let isVisible = true;
 
     function animate() {
+        if (!isVisible) return;
         ctx.clearRect(0, 0, w, h);
         particles.forEach(p => { p.update(); p.draw(); });
         requestAnimationFrame(animate);
     }
+
+    const particleObserver = new IntersectionObserver((entries) => {
+        const [entry] = entries;
+        const wasVisible = isVisible;
+        isVisible = entry.isIntersecting;
+        if (isVisible && !wasVisible) {
+            animate();
+        }
+    }, { threshold: 0 });
+
+    particleObserver.observe(canvas);
     animate();
 })();
 
-// ========== VANTA.JS BACKGROUND ==========
+// ========== VANTA.JS BACKGROUND (OPTIMIZED WITH INTERSECTION OBSERVER) ==========
 document.addEventListener('DOMContentLoaded', () => {
-    if (typeof VANTA !== 'undefined') {
-        try {
-            VANTA.NET({
-                el: "#vanta-bg",
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 200,
-                minWidth: 200,
-                scale: 1.0,
-                scaleMobile: 1.0,
-                color: 0xfb923c,
-                backgroundColor: 0x0c0a09,
-                points: 8,
-                maxDistance: 22,
-                spacing: 18,
-            });
-        } catch (e) {
-            console.log('Vanta init skipped:', e);
+    let vantaEffect = null;
+    const vantaEl = document.getElementById('vanta-bg');
+
+    function initVanta() {
+        if (vantaEl && !vantaEffect && typeof VANTA !== 'undefined') {
+            try {
+                vantaEffect = VANTA.NET({
+                    el: "#vanta-bg",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200,
+                    minWidth: 200,
+                    scale: 1.0,
+                    scaleMobile: 1.0,
+                    color: 0xfb923c,
+                    backgroundColor: 0x0c0a09,
+                    points: 8,
+                    maxDistance: 22,
+                    spacing: 18,
+                });
+            } catch (e) {
+                console.log('Vanta init failed:', e);
+            }
         }
+    }
+
+    function destroyVanta() {
+        if (vantaEffect) {
+            vantaEffect.destroy();
+            vantaEffect = null;
+        }
+    }
+
+    if (vantaEl) {
+        const vantaObserver = new IntersectionObserver((entries) => {
+            const [entry] = entries;
+            if (entry.isIntersecting) {
+                initVanta();
+            } else {
+                destroyVanta();
+            }
+        }, { threshold: 0.05 });
+        vantaObserver.observe(vantaEl);
     }
 });
 
@@ -279,27 +317,43 @@ function typeTitle() {
 }
 setTimeout(typeTitle, 1200);
 
-// ========== NAVBAR ==========
+// ========== NAVBAR & ACTIVE NAV LINK HIGHLIGHT (OPTIMIZED WITH INTERSECTION OBSERVER) ==========
 const navbar = document.getElementById('navbar');
-const sections = document.querySelectorAll('.section');
+const sections = document.querySelectorAll('.section, #hero');
+const navLinks = document.querySelectorAll('.nav-link');
+const heroSection = document.getElementById('hero');
 
-window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
+// 1. Optimize scrolled class toggle
+if (heroSection) {
+    const navbarObserver = new IntersectionObserver((entries) => {
+        const [entry] = entries;
+        navbar.classList.toggle('scrolled', !entry.isIntersecting);
+    }, {
+        rootMargin: '-80px 0px 0px 0px'
+    });
+    navbarObserver.observe(heroSection);
+}
 
-    // Active nav link
-    let current = '';
-    sections.forEach(section => {
-        if (scrollY >= section.offsetTop - 150) {
-            current = section.getAttribute('id');
+// 2. Optimize active nav link highlight
+const activeLinkObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.style.color = '#fb923c';
+                }
+            });
         }
     });
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.style.color = '';
-        if (link.getAttribute('href') === `#${current}`) {
-            link.style.color = '#fb923c';
-        }
-    });
-}, { passive: true });
+}, {
+    rootMargin: '-30% 0px -70% 0px'
+});
+
+sections.forEach(section => {
+    activeLinkObserver.observe(section);
+});
 
 // ========== MOBILE NAV ==========
 const navToggle = document.getElementById('navToggle');
