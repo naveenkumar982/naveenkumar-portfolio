@@ -1,31 +1,3 @@
-// ========== CUSTOM CURSOR ==========
-const cursorDot = document.querySelector('[data-cursor-dot]');
-const cursorOutline = document.querySelector('[data-cursor-outline]');
-
-window.addEventListener('mousemove', (e) => {
-    const posX = e.clientX;
-    const posY = e.clientY;
-
-    cursorDot.style.left = `${posX}px`;
-    cursorDot.style.top = `${posY}px`;
-
-    cursorOutline.animate({
-        left: `${posX}px`,
-        top: `${posY}px`
-    }, { duration: 500, fill: "forwards" });
-});
-
-document.querySelectorAll('a, button, .project-card').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        cursorOutline.style.backgroundColor = 'rgba(34, 211, 238, 0.1)';
-    });
-    el.addEventListener('mouseleave', () => {
-        cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-        cursorOutline.style.backgroundColor = 'transparent';
-    });
-});
-
 // ========== VANTA.JS BACKGROUND ==========
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof VANTA !== 'undefined') {
@@ -38,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
             minWidth: 200.00,
             scale: 1.00,
             scaleMobile: 1.00,
-            color: 0x22d3ee,
-            backgroundColor: 0x0a0e1a,
+            color: 0xfb923c,
+            backgroundColor: 0x140d0a,
             points: 12.00,
             maxDistance: 20.00,
             spacing: 16.00

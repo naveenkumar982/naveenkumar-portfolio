@@ -6,20 +6,20 @@
 }
 
 :root {
-    --bg-primary: #0a0e1a;
-    --bg-secondary: #111827;
-    --bg-card: rgba(17, 24, 39, 0.7);
-    --bg-glass: rgba(255, 255, 255, 0.03);
-    --text-primary: #e2e8f0;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --accent-cyan: #22d3ee;
-    --accent-purple: #a78bfa;
-    --accent-pink: #f472b6;
-    --accent-green: #34d399;
-    --gradient-1: linear-gradient(135deg, #22d3ee, #a78bfa);
-    --gradient-2: linear-gradient(135deg, #a78bfa, #f472b6);
-    --border-subtle: rgba(148, 163, 184, 0.1);
+    --bg-primary: #140d0a;
+    --bg-secondary: #1e140f;
+    --bg-card: rgba(30, 20, 15, 0.7);
+    --bg-glass: rgba(255, 255, 255, 0.04);
+    --text-primary: #fafaf9;
+    --text-secondary: #d6d3d1;
+    --text-muted: #a8a29e;
+    --accent-cyan: #fb923c;
+    --accent-purple: #fcd34d;
+    --accent-pink: #f43f5e;
+    --accent-green: #4ade80;
+    --gradient-1: linear-gradient(135deg, #fb923c, #fcd34d);
+    --gradient-2: linear-gradient(135deg, #fcd34d, #f43f5e);
+    --border-subtle: rgba(214, 211, 209, 0.15);
     --font-main: 'Inter', -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
     --radius: 12px;
@@ -59,7 +59,7 @@ a {
 }
 
 .navbar.scrolled {
-    background: rgba(10, 14, 26, 0.85);
+    background: rgba(20, 13, 10, 0.85);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-subtle);
     padding: 0.7rem 0;
@@ -159,34 +159,7 @@ a {
     z-index: 0;
 }
 
-/* ========== CUSTOM CURSOR ========== */
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--accent-cyan);
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 9999;
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
-}
 
-.cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(34, 211, 238, 0.5);
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 9998;
-    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
-}
 
 .hero-content {
     position: relative;
@@ -283,12 +256,12 @@ a {
 .btn-primary {
     background: var(--gradient-1);
     color: var(--bg-primary);
-    box-shadow: 0 4px 20px rgba(34, 211, 238, 0.3);
+    box-shadow: 0 4px 20px rgba(251, 146, 60, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(34, 211, 238, 0.4);
+    box-shadow: 0 8px 30px rgba(251, 146, 60, 0.4);
 }
 
 .btn-outline {
@@ -460,8 +433,8 @@ a {
 
 .skill-card:hover {
     border-color: var(--accent-cyan);
-    box-shadow: 0 10px 40px rgba(34, 211, 238, 0.1);
-    background: rgba(34, 211, 238, 0.03);
+    box-shadow: 0 10px 40px rgba(251, 146, 60, 0.1);
+    background: rgba(251, 146, 60, 0.03);
 }
 
 .skill-icon {
@@ -515,7 +488,7 @@ a {
 }
 
 .project-card:hover {
-    border-color: rgba(34, 211, 238, 0.3);
+    border-color: rgba(251, 146, 60, 0.3);
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
 }
 
@@ -525,8 +498,8 @@ a {
 
 .project-card.featured {
     grid-column: 1 / -1;
-    background: linear-gradient(135deg, rgba(34, 211, 238, 0.05), rgba(167, 139, 250, 0.05));
-    border-color: rgba(34, 211, 238, 0.2);
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.05), rgba(167, 139, 250, 0.05));
+    border-color: rgba(251, 146, 60, 0.2);
 }
 
 .project-card.featured::before {
@@ -579,10 +552,10 @@ a {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--accent-cyan);
-    background: rgba(34, 211, 238, 0.08);
+    background: rgba(251, 146, 60, 0.08);
     padding: 0.3rem 0.7rem;
     border-radius: 20px;
-    border: 1px solid rgba(34, 211, 238, 0.15);
+    border: 1px solid rgba(251, 146, 60, 0.15);
 }
 
 .project-links {
@@ -632,16 +605,16 @@ a {
     font-weight: 600;
     font-size: 0.95rem;
     color: var(--accent-cyan);
-    border: 1.5px solid rgba(34, 211, 238, 0.3);
+    border: 1.5px solid rgba(251, 146, 60, 0.3);
     transition: var(--transition);
-    background: rgba(34, 211, 238, 0.05);
+    background: rgba(251, 146, 60, 0.05);
 }
 
 .contact-btn:hover {
-    background: rgba(34, 211, 238, 0.1);
+    background: rgba(251, 146, 60, 0.1);
     border-color: var(--accent-cyan);
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(34, 211, 238, 0.15);
+    box-shadow: 0 8px 30px rgba(251, 146, 60, 0.15);
 }
 
 /* ========== FOOTER ========== */
@@ -687,7 +660,7 @@ a {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 14, 26, 0.98);
+        background: rgba(20, 13, 10, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: center;
