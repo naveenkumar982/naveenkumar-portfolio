@@ -4,27 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naveen Kumar | 3rd Year BE Student & Aspiring Full-Stack Developer</title>
+    <title>Naveen Kumar | Full-Stack Developer & ML Engineer</title>
     <meta name="description"
-        content="Naveen Kumar - 3rd Year BE Student & aspiring full-stack developer. Building real-world web applications with live APIs, databases, and modern UI. View my projects and portfolio.">
+        content="Naveen Kumar - Full-Stack Developer, ML Engineer & Cloud Enthusiast. Building world-class applications with AI, Cloud, and modern web technologies.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Floating Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">&lt;NK /&gt;</a>
-            <ul class="nav-links">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>NK<span class="logo-bracket"> /&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
@@ -32,23 +37,34 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ==================== HERO ==================== -->
     <section class="hero" id="hero">
         <div class="hero-bg" id="vanta-bg"></div>
+        <div class="hero-particles"></div>
         <div class="hero-content">
-            <p class="hero-greeting">Hi, I'm</p>
-            <h1 class="hero-name">Naveen Kumar</h1>
-            <div class="hero-title-wrapper">
+            <div class="hero-badge" data-animate="fade-up">
+                <span class="badge-dot"></span>
+                Available for opportunities
+            </div>
+            <p class="hero-greeting" data-animate="fade-up">Hi, I'm</p>
+            <h1 class="hero-name" data-animate="fade-up">
+                <span class="name-line">Naveen</span>
+                <span class="name-line name-gradient">Kumar</span>
+            </h1>
+            <div class="hero-title-wrapper" data-animate="fade-up">
                 <span class="hero-title-prefix">&gt;&nbsp;</span>
                 <span class="hero-title" id="typingText"></span>
                 <span class="cursor">|</span>
             </div>
-            <p class="hero-description">
-                3rd Year BE Student building real-world full-stack web applications.
-                <br>Passionate about turning ideas into functional, beautiful products.
+            <p class="hero-description" data-animate="fade-up">
+                Crafting real-world full-stack applications with live APIs, AI integrations,
+                <br>and pixel-perfect interfaces that solve real problems.
             </p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
+            <div class="hero-cta" data-animate="fade-up">
+                <a href="#projects" class="btn btn-primary">
+                    <span class="btn-text">View Projects</span>
+                    <span class="btn-icon">→</span>
+                </a>
                 <a href="https://github.com/naveenkumar982" target="_blank" class="btn btn-outline">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -57,470 +73,436 @@
                     GitHub
                 </a>
             </div>
+            <div class="hero-stats" data-animate="fade-up">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="15">0</span>+
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="9">0</span>+
+                    <span class="stat-label">Technologies</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="3">0</span>+
+                    <span class="stat-label">Years Learning</span>
+                </div>
+            </div>
         </div>
         <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span class="scroll-text">Scroll Down</span>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ==================== ABOUT ==================== -->
     <section class="section" id="about">
         <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">01.</span> About Me
-            </h2>
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>
-                        I'm a 3rd year BE student with a deep passion for building real-world web applications.
-                        My journey started with curiosity about how websites work, and it evolved into building
-                        fully functional apps with live APIs, databases, and polished user interfaces.
+                    <p data-animate="fade-up">
+                        I'm a passionate <strong>Full-Stack Developer</strong> with a deep love for building
+                        real-world web applications. My journey started with curiosity about how websites work,
+                        and it evolved into building fully functional apps with live APIs, databases, and
+                        polished user interfaces.
                     </p>
-                    <p>
-                        I focus on <strong>full-stack web development</strong>, integrating <strong>live APIs</strong>,
-                        <strong>real-time data</strong>, and <strong>modern UI/UX</strong>. I build apps that
-                        actually work — with real weather data, AI chat, expense analytics, and more.
+                    <p data-animate="fade-up">
+                        I focus on integrating <strong>live APIs</strong>, <strong>real-time data</strong>,
+                        and <strong>modern UI/UX</strong>. I build apps that actually work — with real weather
+                        data, AI-powered chat, expense analytics, and more.
                     </p>
-                    <p>
+                    <p data-animate="fade-up">
                         When I'm not building projects, you'll find me solving algorithmic puzzles,
-                        exploring new technologies, or learning about system design and cloud computing.
+                        exploring new technologies, or diving deep into system design and cloud computing.
                     </p>
-                </div>
-                <div class="about-terminal">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
+                    <div class="about-highlights" data-animate="fade-up">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🎓</span>
+                            <span>BE Student — Computer Science</span>
                         </div>
-                        <span class="terminal-title">naveen@dev ~ $</span>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🏆</span>
+                            <span>AI for Bharat Hackathon Participant</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🚀</span>
+                            <span>15+ Real-World Projects Built</span>
+                        </div>
                     </div>
-                    <div class="terminal-body">
-                        <p><span class="terminal-prompt">$</span> cat about.json</p>
-                        <pre class="terminal-output">{
-  "name": "Naveen Kumar",
-  "role": "3rd Year BE Student",
-  "focus": "Full-Stack Web Development",
-  "tech": ["JavaScript", "APIs", "Chart.js"],
-  "building": "Real-world web applications 🚀"
-}</pre>
+                </div>
+                <div class="about-visual" data-animate="fade-up">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">naveen@dev ~ $</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-cmd" id="terminalCmd"></span>
+                                <span class="terminal-cursor-blink">▌</span>
+                            </div>
+                            <pre class="terminal-output" id="terminalOutput"></pre>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- ==================== SKILLS ==================== -->
     <section class="section" id="skills">
         <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">02.</span> Tech Stack
-            </h2>
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Tech Stack</h2>
+                <div class="section-line"></div>
+            </div>
             <div class="skills-grid">
-                <div class="skill-card" data-delay="0">
-                    <div class="skill-icon">🐍</div>
+                <div class="skill-card" data-animate="fade-up" data-color="#f59e0b">
+                    <div class="skill-icon-wrap"><span class="skill-icon">🐍</span></div>
                     <h3>Python</h3>
                     <p>Flask, FastAPI, Pandas, Scikit-learn</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
                 </div>
-                <div class="skill-card" data-delay="100">
-                    <div class="skill-icon">🐳</div>
+                <div class="skill-card" data-animate="fade-up" data-color="#0ea5e9">
+                    <div class="skill-icon-wrap"><span class="skill-icon">🐳</span></div>
                     <h3>Docker</h3>
                     <p>Containerization, Docker Compose, CI/CD</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
                 </div>
-                <div class="skill-card" data-delay="200">
-                    <div class="skill-icon">🤖</div>
+                <div class="skill-card" data-animate="fade-up" data-color="#a855f7">
+                    <div class="skill-icon-wrap"><span class="skill-icon">🤖</span></div>
                     <h3>Machine Learning</h3>
                     <p>MLflow, MLOps, Model Deployment</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
                 </div>
-                <div class="skill-card" data-delay="300">
-                    <div class="skill-icon">☁️</div>
-                    <h3>AWS</h3>
-                    <p>Lambda, S3, Kinesis, ECR</p>
+                <div class="skill-card" data-animate="fade-up" data-color="#f97316">
+                    <div class="skill-icon-wrap"><span class="skill-icon">☁️</span></div>
+                    <h3>AWS / GCP</h3>
+                    <p>Lambda, S3, Cloud Run, Firebase</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
                 </div>
-                <div class="skill-card" data-delay="400">
-                    <div class="skill-icon">🔧</div>
+                <div class="skill-card" data-animate="fade-up" data-color="#22c55e">
+                    <div class="skill-icon-wrap"><span class="skill-icon">🔧</span></div>
                     <h3>DevOps</h3>
                     <p>Terraform, Git, GitHub Actions</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
                 </div>
-                <div class="skill-card" data-delay="500">
-                    <div class="skill-icon">🌐</div>
+                <div class="skill-card" data-animate="fade-up" data-color="#ef4444">
+                    <div class="skill-icon-wrap"><span class="skill-icon">🌐</span></div>
                     <h3>HTML & CSS</h3>
                     <p>Responsive Design, Glassmorphism, Animations</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
                 </div>
-                <div class="skill-card" data-delay="600">
-                    <div class="skill-icon">⚡</div>
+                <div class="skill-card" data-animate="fade-up" data-color="#eab308">
+                    <div class="skill-icon-wrap"><span class="skill-icon">⚡</span></div>
                     <h3>JavaScript</h3>
-                    <p>Vanilla JS, DOM, Drag & Drop, Chart.js</p>
+                    <p>Vanilla JS, DOM, Chart.js, Three.js</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
                 </div>
-                <div class="skill-card" data-delay="700">
-                    <div class="skill-icon">🔌</div>
+                <div class="skill-card" data-animate="fade-up" data-color="#06b6d4">
+                    <div class="skill-icon-wrap"><span class="skill-icon">🔌</span></div>
                     <h3>API Integration</h3>
-                    <p>REST APIs, Gemini AI, Open-Meteo, Fetch API</p>
+                    <p>REST APIs, Gemini AI, Open-Meteo</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
                 </div>
-                <div class="skill-card" data-delay="800">
-                    <div class="skill-icon">🧮</div>
+                <div class="skill-card" data-animate="fade-up" data-color="#8b5cf6">
+                    <div class="skill-icon-wrap"><span class="skill-icon">🧮</span></div>
                     <h3>Algorithms</h3>
-                    <p>Data Structures, Dynamic Programming, Graphs</p>
+                    <p>Data Structures, DP, Graphs</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- ==================== PROJECTS ==================== -->
     <section class="section" id="projects">
         <div class="container">
-            <h2 class="section-title">
-                <span class="section-number">03.</span> Projects
-            </h2>
-            <div class="projects-grid">
-                <!-- Featured Project: Weather Dashboard -->
-                <div class="project-card featured">
-                    <div class="project-label">Featured Project</div>
-                    <h3 class="project-name">SkyPulse — Live Weather Dashboard</h3>
-                    <p class="project-desc">
-                        Real-time weather dashboard powered by Open-Meteo API. Shows live current weather,
-                        24-hour & 7-day forecasts, air quality index, sunrise/sunset tracking, city search
-                        with autocomplete, saved locations, unit toggle (°C/°F), and embedded maps.
-                    </p>
-                    <div class="project-tech">
-                        <span>JavaScript</span>
-                        <span>Open-Meteo API</span>
-                        <span>Air Quality API</span>
-                        <span>Geolocation</span>
-                        <span>OpenStreetMap</span>
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Projects</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <!-- Featured Project -->
+            <div class="featured-project" data-animate="fade-up">
+                <div class="featured-badge">⭐ Featured Project</div>
+                <div class="featured-content">
+                    <div class="featured-info">
+                        <h3 class="featured-name">SkyPulse — Live Weather Dashboard</h3>
+                        <p class="featured-desc">
+                            Real-time weather dashboard powered by Open-Meteo API. Shows live current weather,
+                            24-hour & 7-day forecasts, air quality index, sunrise/sunset tracking, city search
+                            with autocomplete, saved locations, unit toggle, and embedded maps.
+                        </p>
+                        <div class="featured-tech">
+                            <span>JavaScript</span>
+                            <span>Open-Meteo API</span>
+                            <span>Air Quality API</span>
+                            <span>Geolocation</span>
+                            <span>OpenStreetMap</span>
+                        </div>
+                        <div class="featured-links">
+                            <a href="https://naveenkumar982.github.io/weather-dashboard/" target="_blank"
+                                class="btn btn-primary btn-sm">
+                                <span class="btn-text">Live Demo</span>
+                                <span class="btn-icon">↗</span>
+                            </a>
+                            <a href="https://github.com/naveenkumar982/weather-dashboard" target="_blank"
+                                class="btn btn-outline btn-sm">Source Code</a>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://naveenkumar982.github.io/weather-dashboard/" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                <polyline points="15 3 21 3 21 9" />
-                                <line x1="10" y1="14" x2="21" y2="3" />
-                            </svg>
-                            Live Demo
-                        </a>
-                        <a href="https://github.com/naveenkumar982/weather-dashboard" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                            Source Code
-                        </a>
+                    <div class="featured-visual">
+                        <div class="weather-widget">
+                            <div class="weather-icon-animated">
+                                <div class="sun"></div>
+                                <div class="cloud cloud-1"></div>
+                                <div class="cloud cloud-2"></div>
+                            </div>
+                            <div class="weather-temp">28°C</div>
+                            <div class="weather-city">Hyderabad, IN</div>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- DevContext Tool -->
-                <div class="project-card">
-                    <div class="project-icon">🛠️</div>
-                    <h3 class="project-name">DevContext CLI</h3>
-                    <p class="project-desc">
-                        Developer session briefing CLI tool analyzing Git activity, code health, hotspots, and generating AI summaries for seamless workflow context.
-                    </p>
-                    <div class="project-tech">
-                        <span>CLI</span>
-                        <span>Git</span>
-                        <span>AI Summaries</span>
+            <!-- Project Grid -->
+            <div class="projects-grid">
+                <!-- DevContext CLI -->
+                <div class="project-card" data-animate="fade-up" data-accent="#f59e0b">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon-wrap">🛠️</div>
+                        <div class="project-links-top">
+                            <a href="https://github.com/naveenkumar982/devcontext-tool" target="_blank" class="project-link-icon" title="Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/naveenkumar982/devcontext-tool" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                            Source Code
-                        </a>
+                    <h3 class="project-name">DevContext CLI</h3>
+                    <p class="project-desc">Developer session briefing CLI analyzing Git activity, code health, hotspots, and AI summaries for seamless workflow context.</p>
+                    <div class="project-tech">
+                        <span>CLI</span><span>Git</span><span>AI Summaries</span>
                     </div>
                 </div>
 
                 <!-- JudgeAI -->
-                <div class="project-card">
-                    <div class="project-icon">⚖️</div>
+                <div class="project-card" data-animate="fade-up" data-accent="#ef4444">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon-wrap">⚖️</div>
+                        <div class="project-links-top">
+                            <a href="https://github.com/naveenkumar982/judgeai" target="_blank" class="project-link-icon" title="Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
                     <h3 class="project-name">JudgeAI — Legal Tech</h3>
-                    <p class="project-desc">
-                        AI-powered court judgment to action plan system built for AI for Bharat Hackathon by HackerEarth. Extracts actionable insights from complex legal documents.
-                    </p>
+                    <p class="project-desc">AI-powered court judgment to action plan system. Built for AI for Bharat Hackathon by HackerEarth — Theme 11.</p>
                     <div class="project-tech">
-                        <span>AI</span>
-                        <span>NLP</span>
-                        <span>Python</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/naveenkumar982/judgeai" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                            Source Code
-                        </a>
+                        <span>AI</span><span>NLP</span><span>Python</span><span>Hackathon</span>
                     </div>
                 </div>
 
-                <!-- OpenEnv SRE Agent -->
-                <div class="project-card">
-                    <div class="project-icon">☁️</div>
+                <!-- OpenEnv SRE -->
+                <div class="project-card" data-animate="fade-up" data-accent="#06b6d4">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon-wrap">☁️</div>
+                        <div class="project-links-top">
+                            <a href="https://github.com/naveenkumar982/openenv-sre-agent" target="_blank" class="project-link-icon" title="Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
                     <h3 class="project-name">OpenEnv SRE Agent</h3>
-                    <p class="project-desc">
-                        OpenEnv-compliant Cloud Site Reliability Engineering & FinOps Simulator designed for intelligent cloud management and cost optimization.
-                    </p>
+                    <p class="project-desc">OpenEnv-compliant Cloud SRE & FinOps Simulator for intelligent cloud management and cost optimization.</p>
                     <div class="project-tech">
-                        <span>Cloud</span>
-                        <span>SRE</span>
-                        <span>FinOps</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/naveenkumar982/openenv-sre-agent" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                            Source Code
-                        </a>
+                        <span>Cloud</span><span>SRE</span><span>FinOps</span><span>RL</span>
                     </div>
                 </div>
 
-                <!-- AI Chat Assistant -->
-                <div class="project-card">
-                    <div class="project-icon">🤖</div>
+                <!-- NexusAI -->
+                <div class="project-card" data-animate="fade-up" data-accent="#a855f7">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon-wrap">🤖</div>
+                        <div class="project-links-top">
+                            <a href="https://naveenkumar982.github.io/ai-chat-assistant/" target="_blank" class="project-link-icon" title="Live Demo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                            <a href="https://github.com/naveenkumar982/ai-chat-assistant" target="_blank" class="project-link-icon" title="Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
                     <h3 class="project-name">NexusAI — Chat Assistant</h3>
-                    <p class="project-desc">
-                        AI chatbot powered by Google Gemini API with real conversations, markdown rendering,
-                        code highlighting, multiple chat threads, model selection, and conversation history.
-                    </p>
+                    <p class="project-desc">AI chatbot powered by Gemini API with markdown rendering, code highlighting, multiple chat threads, and conversation history.</p>
                     <div class="project-tech">
-                        <span>JavaScript</span>
-                        <span>Gemini API</span>
-                        <span>Marked.js</span>
-                        <span>REST API</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://naveenkumar982.github.io/ai-chat-assistant/" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                <polyline points="15 3 21 3 21 9" />
-                                <line x1="10" y1="14" x2="21" y2="3" />
-                            </svg>
-                            Live Demo
-                        </a>
-                        <a href="https://github.com/naveenkumar982/ai-chat-assistant" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </a>
+                        <span>JavaScript</span><span>Gemini API</span><span>Marked.js</span>
                     </div>
                 </div>
 
-                <!-- Expense Tracker -->
-                <div class="project-card">
-                    <div class="project-icon">💰</div>
-                    <h3 class="project-name">FinTrack — Smart Expense Dashboard</h3>
-                    <p class="project-desc">
-                        Full expense tracker with income/expense CRUD, Chart.js doughnut & bar charts,
-                        category analytics, budget goals with progress bars, monthly trends, and CSV export.
-                    </p>
-                    <div class="project-tech">
-                        <span>JavaScript</span>
-                        <span>Chart.js</span>
-                        <span>CSV Export</span>
-                        <span>Analytics</span>
+                <!-- FinTrack -->
+                <div class="project-card" data-animate="fade-up" data-accent="#22c55e">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon-wrap">💰</div>
+                        <div class="project-links-top">
+                            <a href="https://naveenkumar982.github.io/expense-tracker-dashboard/" target="_blank" class="project-link-icon" title="Live Demo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                            <a href="https://github.com/naveenkumar982/expense-tracker-dashboard" target="_blank" class="project-link-icon" title="Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://naveenkumar982.github.io/expense-tracker-dashboard/" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                <polyline points="15 3 21 3 21 9" />
-                                <line x1="10" y1="14" x2="21" y2="3" />
-                            </svg>
-                            Live Demo
-                        </a>
-                        <a href="https://github.com/naveenkumar982/expense-tracker-dashboard" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </a>
+                    <h3 class="project-name">FinTrack — Expense Dashboard</h3>
+                    <p class="project-desc">Full expense tracker with Chart.js analytics, budget goals with progress bars, monthly trends, and CSV export.</p>
+                    <div class="project-tech">
+                        <span>JavaScript</span><span>Chart.js</span><span>CSV Export</span>
                     </div>
                 </div>
 
-                <!-- Kanban Board -->
-                <div class="project-card">
-                    <div class="project-icon">📋</div>
+                <!-- TaskFlow -->
+                <div class="project-card" data-animate="fade-up" data-accent="#f97316">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon-wrap">📋</div>
+                        <div class="project-links-top">
+                            <a href="https://naveenkumar982.github.io/kanban-task-board/" target="_blank" class="project-link-icon" title="Live Demo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                            <a href="https://github.com/naveenkumar982/kanban-task-board" target="_blank" class="project-link-icon" title="Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
                     <h3 class="project-name">TaskFlow — Project Board</h3>
-                    <p class="project-desc">
-                        Kanban board with 5 columns, drag-and-drop, subtask checklists, priority levels,
-                        tags, due dates, overdue tracking, search/filter, stats, and JSON import/export.
-                    </p>
+                    <p class="project-desc">Kanban board with drag-and-drop, subtask checklists, priority levels, tags, due dates, and JSON import/export.</p>
                     <div class="project-tech">
-                        <span>JavaScript</span>
-                        <span>Drag & Drop</span>
-                        <span>JSON Export</span>
-                        <span>CRUD</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://naveenkumar982.github.io/kanban-task-board/" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                <polyline points="15 3 21 3 21 9" />
-                                <line x1="10" y1="14" x2="21" y2="3" />
-                            </svg>
-                            Live Demo
-                        </a>
-                        <a href="https://github.com/naveenkumar982/kanban-task-board" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </a>
+                        <span>JavaScript</span><span>Drag & Drop</span><span>CRUD</span>
                     </div>
                 </div>
 
-                <!-- Blog Platform -->
-                <div class="project-card">
-                    <div class="project-icon">✍️</div>
+                <!-- DevInk -->
+                <div class="project-card" data-animate="fade-up" data-accent="#ec4899">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon-wrap">✍️</div>
+                        <div class="project-links-top">
+                            <a href="https://naveenkumar982.github.io/blog-platform/" target="_blank" class="project-link-icon" title="Live Demo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                            <a href="https://github.com/naveenkumar982/blog-platform" target="_blank" class="project-link-icon" title="Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
                     <h3 class="project-name">DevInk — Blog Platform</h3>
-                    <p class="project-desc">
-                        Full blogging platform with Markdown editor + live preview, publish/draft system,
-                        comments, likes, views analytics, tag filtering, profile setup, and share links.
-                    </p>
+                    <p class="project-desc">Full blogging platform with Markdown editor, live preview, publish/draft system, comments, likes, and analytics.</p>
                     <div class="project-tech">
-                        <span>JavaScript</span>
-                        <span>Marked.js</span>
-                        <span>Markdown</span>
-                        <span>Analytics</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://naveenkumar982.github.io/blog-platform/" target="_blank" class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                <polyline points="15 3 21 3 21 9" />
-                                <line x1="10" y1="14" x2="21" y2="3" />
-                            </svg>
-                            Live Demo
-                        </a>
-                        <a href="https://github.com/naveenkumar982/blog-platform" target="_blank" class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </a>
+                        <span>JavaScript</span><span>Marked.js</span><span>Markdown</span>
                     </div>
                 </div>
 
-                <!-- Code Snippet Manager -->
-                <div class="project-card">
-                    <div class="project-icon">💻</div>
+                <!-- CodeVault -->
+                <div class="project-card" data-animate="fade-up" data-accent="#14b8a6">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon-wrap">💻</div>
+                        <div class="project-links-top">
+                            <a href="https://naveenkumar982.github.io/code-snippet-manager/" target="_blank" class="project-link-icon" title="Live Demo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                            <a href="https://github.com/naveenkumar982/code-snippet-manager" target="_blank" class="project-link-icon" title="Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
                     <h3 class="project-name">CodeVault — Snippet Manager</h3>
-                    <p class="project-desc">
-                        A beautiful application to save, organize, and quickly retrieve code snippets. Features syntax
-                        highlighting, categorization, search, and a clean user interface.
-                    </p>
+                    <p class="project-desc">Save, organize, and retrieve code snippets with syntax highlighting, categorization, and search functionality.</p>
                     <div class="project-tech">
-                        <span>JavaScript</span>
-                        <span>HTML/CSS</span>
-                        <span>LocalStorage</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://naveenkumar982.github.io/code-snippet-manager/" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                <polyline points="15 3 21 3 21 9" />
-                                <line x1="10" y1="14" x2="21" y2="3" />
-                            </svg>
-                            Live Demo
-                        </a>
-                        <a href="https://github.com/naveenkumar982/code-snippet-manager" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </a>
+                        <span>JavaScript</span><span>HTML/CSS</span><span>LocalStorage</span>
                     </div>
                 </div>
 
-                <!-- MLOps Project -->
-                <div class="project-card">
-                    <div class="project-icon">⚙️</div>
-                    <h3 class="project-name">MLOps Pipeline — mlops-project-v1</h3>
-                    <p class="project-desc">
-                        End-to-end Machine Learning Operations pipeline featuring model tracking, containerization, and
-                        infrastructure as code for automated deployment.
-                    </p>
-                    <div class="project-tech">
-                        <span>Terraform</span>
-                        <span>Docker</span>
-                        <span>MLflow</span>
-                        <span>AWS</span>
+                <!-- MLOps -->
+                <div class="project-card" data-animate="fade-up" data-accent="#8b5cf6">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon-wrap">⚙️</div>
+                        <div class="project-links-top">
+                            <a href="https://github.com/naveenkumar982/mlops-project-v1" target="_blank" class="project-link-icon" title="Source Code">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/naveenkumar982/mlops-project-v1" target="_blank"
-                            class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                            Source Code
-                        </a>
+                    <h3 class="project-name">MLOps Pipeline</h3>
+                    <p class="project-desc">End-to-end Machine Learning Operations pipeline with model tracking, containerization, and infrastructure as code.</p>
+                    <div class="project-tech">
+                        <span>Terraform</span><span>Docker</span><span>MLflow</span><span>AWS</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ==================== CONTACT ==================== -->
     <section class="section" id="contact">
-        <div class="container contact-container">
-            <h2 class="section-title">
-                <span class="section-number">04.</span> Get In Touch
-            </h2>
-            <p class="contact-text">
-                I'm always open to new opportunities, collaborations, and interesting projects.
-                Whether you have a question or just want to say hi — feel free to reach out!
-            </p>
-            <div class="contact-links">
-                <a href="https://github.com/naveenkumar982" target="_blank" class="contact-btn">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                    GitHub
-                </a>
-                <a href="mailto:naveenkumar982@outlook.com" class="contact-btn">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                        <polyline points="22,7 12,13 2,7" />
-                    </svg>
-                    Email
-                </a>
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="section-header center">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">Let's Connect</h2>
+                    <div class="section-line"></div>
+                </div>
+                <p class="contact-text" data-animate="fade-up">
+                    I'm always open to new opportunities, collaborations, and interesting projects.
+                    Whether you have a question or just want to say hi — feel free to reach out!
+                </p>
+                <div class="contact-links" data-animate="fade-up">
+                    <a href="https://github.com/naveenkumar982" target="_blank" class="contact-card">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-handle">@naveenkumar982</span>
+                    </a>
+                    <a href="mailto:naveenkumar982@outlook.com" class="contact-card">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <polyline points="22,7 12,13 2,7"/>
+                        </svg>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-handle">naveenkumar982@outlook.com</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
-        <p>Designed & Built by <strong>Naveen Kumar</strong></p>
-        <p class="footer-sub">© 2026 · naveenkumar.dev</p>
+        <div class="footer-content">
+            <p>Designed & Built by <strong>Naveen Kumar</strong></p>
+            <p class="footer-sub">&copy; 2026 &middot; naveenkumar.dev</p>
+        </div>
     </footer>
 
     <!-- External Libraries -->
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
