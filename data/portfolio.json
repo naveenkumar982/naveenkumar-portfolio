@@ -1,0 +1,239 @@
+{
+  "personal": {
+    "name": "Naveen Kumar TV",
+    "role": "3rd Year BE Student",
+    "focus": "Full-Stack Web Development",
+    "tagline": "Engineering Precision in Software Development.",
+    "bio": "3rd Year BE Student building real-world full-stack web applications. Passionate about turning ideas into functional, beautiful products with architectural clarity.",
+    "extendedBio": "I am a 3rd year BE student deeply embedded in the world of Full-Stack Development and MLOps. My engineering journey is defined by a transition from curiosity to the rigorous construction of production-ready applications.",
+    "extendedBioDetail": "Focusing on the intersection of scalable infrastructure and intelligent data, I build applications that integrate live APIs, real-time analytics, and modern UI/UX principles. My work isn't just about code; it's about building functional, beautiful products that solve real-world problems—from AI-driven legal tech to cloud-native site reliability monitoring.",
+    "terminalProfile": {
+      "name": "Naveen Kumar TV",
+      "role": "3rd Year BE Student",
+      "focus": "Full-Stack Web Development",
+      "tech": ["JavaScript", "APIs", "Cloud"],
+      "building": "Real-world products 🚀"
+    },
+    "links": {
+      "github": "https://github.com/naveenkumar982",
+      "linkedin": "https://linkedin.com/in/naveenkumar",
+      "twitter": "https://twitter.com/naveenkumar",
+      "email": "mailto:hello@naveenkumar.dev",
+      "resume": "#",
+      "portfolio": "https://naveenkumar982.github.io/naveenkumar-portfolio/"
+    },
+    "portraitImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuDsVp1ZLRVEoOFi4u04_X67FNt0wWJ2tGa496JAXqRSAMqa9CqmHByBVBnGOvEOKalwCpM9yuvawa-vvOINGJNkH0XCTvCChXqrD0xQXmNH5AsyaCwfV9AZtX6_ZiNGjUncO0NZ8ObhFe6QWOTEW2YnaZyL9AS9he5IziLJOtE9Te0zDLuiPY36ZtMxTl5pM3sSSy9Q1NCsUHCpoEIC-ft8boPXRNciHUHCEeqFojP53x9Q8v9vGjeV9SA9xhq7bpr46dkVgXmCB4by"
+  },
+  "projects": [
+    {
+      "id": "devcontext-cli",
+      "title": "DevContext CLI",
+      "subtitle": "Developer Session Briefing Tool",
+      "description": "Developer session briefing CLI tool analyzing Git activity, code health, hotspots, and generating AI summaries for seamless workflow context.",
+      "category": "DevTools",
+      "techTags": ["Node.js", "Git API", "Gemini AI"],
+      "githubUrl": "https://github.com/naveenkumar982/devcontext-tool",
+      "demoUrl": null,
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAybwRtlbjY68aH12M7urUeDDAX6tXB4e-uXNH2XgY8xVeHa_l5NBNMMZ4P9pfBGF_-xvxKXU8G3fXbvaCmXOMrsvCNKzbKhRH6vGlIW4AxfOvtZNCg96xO1iztZkSgHOZwYYnPcUa6cEUV9EAO7CbOXOszbKPoHVD1phjtISDE_eX51nbQeg7gGT-3DAYDCTrBguBJllRrFImFatsw-NnjgHeKvqoWXZsyQ6P4cpAumNjRQA7ILblMSvMP5qie2OGjrsmo9BBbWS3S",
+      "status": "LIVE",
+      "featured": true,
+      "badge": "CLI Tool",
+      "gridSpan": "md:col-span-8"
+    },
+    {
+      "id": "judgeai",
+      "title": "JudgeAI",
+      "subtitle": "AI Legal Document Analyzer",
+      "description": "AI-powered court judgment to action plan system. Extracts actionable insights from complex legal documents.",
+      "category": "AI/ML",
+      "techTags": ["NLP", "Python"],
+      "githubUrl": "https://github.com/naveenkumar982/judgeai",
+      "demoUrl": null,
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuBvNDYW7n2YwNQEs3euHHm-eRi8J1AoO_uxqwOMXFVLAjTswpztpUa4dIW_ArlZwsziwwuJn28JqLYpezps0up0EH1Zeb34BqLljD7xZwDcaut7pI6znHz-GB04A3htVnT3KOQVGq8vHHu0PJzgBvbBCrppogt23qF6mpY-yPZPQuM_S4Sv3jsyx_ggXDCsax4Ori9P8dKCs1mstqYN6sRUjr8WF_Po--DmCs8Q_BP8e7m5xPjDacLZZhZESRSJ9ngSbrDfa_GIUIIH",
+      "status": "LIVE",
+      "featured": false,
+      "badge": "AI/NLP",
+      "gridSpan": "md:col-span-4"
+    },
+    {
+      "id": "openenv-sre-agent",
+      "title": "OpenEnv SRE Agent",
+      "subtitle": "Cloud SRE & FinOps Simulator",
+      "description": "Cloud Site Reliability Engineering & FinOps Simulator designed for intelligent cloud management and cost optimization.",
+      "category": "SRE/Cloud",
+      "techTags": ["Terraform", "AWS"],
+      "githubUrl": "https://github.com/naveenkumar982/openenv-sre-agent",
+      "demoUrl": null,
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuDB_mYDv5_ZVeoaNXsmD_U3RbCMJfao_k8saUmUUSa5PZfsuAfIkiLNgp6CimqLo7h8tt7KZdJMCyWQiak8aoTvG1OIRZSNK3FlkBXKPUqHjmoP2NA7928MQhRqqjqkEo5fXyOYpX-w26eQJi55MFpvJO7dRuWy-rG9ibwHPpxaESUCPZb5wjYv6BJkNzpq14h55sztmB_Fzo7UpQnF2_s33czscrSd4hdmTDZaHSLAIWIYz6zK41H-f-GmYkkk0Gns7Lyd2TlSJhqs",
+      "status": "LIVE",
+      "featured": true,
+      "badge": "SRE/Cloud",
+      "gridSpan": "md:col-span-5"
+    },
+    {
+      "id": "fintrack",
+      "title": "FinTrack Dashboard",
+      "subtitle": "Smart Expense Tracker",
+      "description": "Smart expense tracker with real-time Chart.js analytics, budget goals, and CSV export functionality for financial oversight.",
+      "category": "DevTools",
+      "techTags": ["Chart.js", "JavaScript"],
+      "githubUrl": "https://github.com/naveenkumar982/expense-tracker-dashboard",
+      "demoUrl": "https://naveenkumar982.github.io/expense-tracker-dashboard/",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuCjDkNvvXvk-o8CMB6LW0xZuwvq1ZupmTQf_Xv869etZyae939ZjrhL2_QmQWmlHRPRz8seppzzliItNT_jRfmPUXlJWQ_sDw_M1VXEsu3VVq1aLIuEEDpK5YsxLllhNhj6603NywrALO8eCoor9CZYThwnnzaxQKua7RCNaF-KxMJWcKZV8cbW6DnPIXhXWWQgn84RPqVu0mBOy7fOtFS8svL8R-xu6PjVGF5vZhFjfz3eR4IoGdybfTPPu7CsJmZSJlrCIpbUxmKv",
+      "status": "LIVE",
+      "featured": false,
+      "badge": "Dashboard",
+      "gridSpan": "md:col-span-7"
+    },
+    {
+      "id": "taskflow",
+      "title": "TaskFlow Kanban",
+      "subtitle": "Project Management Board",
+      "description": "Project board with 5 columns, drag-and-drop mechanics, and robust JSON import/export for data portability.",
+      "category": "DevTools",
+      "techTags": ["Drag-n-Drop", "Vanilla JS"],
+      "githubUrl": "https://github.com/naveenkumar982/kanban-task-board",
+      "demoUrl": "https://naveenkumar982.github.io/kanban-task-board/",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuDZPiG1NuUvxtoj4rR3KG_cWLyRQvX3DM9d7YWpYaHj7mNyggglKMwuMz2e2EdEgnKpYDEKQpIYPC161Xc51kL4JDm7BfLBwtE7DdOk6yrEePyRDGP1nuQxIUOC3CjkqnaFjNzdcyzhzrpKMZWNzn-lyR_2nnk6nLnzuAjxfLuRxXA-4kYQHzrgLb3D7AZ4wvLbDG9RU2zpZ2-shR-x2uWGFyBRq-BmTuMlxL6uln62FNLMxRDYR8zIoyVAAb3jJxGuyiC4C9bIojV7",
+      "status": "LIVE",
+      "featured": false,
+      "badge": "Productivity",
+      "gridSpan": "md:col-span-6"
+    },
+    {
+      "id": "devink",
+      "title": "DevInk Platform",
+      "subtitle": "Technical Blogging Platform",
+      "description": "Full blogging platform with Markdown editor + live preview, publish/draft system, and detailed view analytics.",
+      "category": "DevTools",
+      "techTags": ["Markdown", "Analytics"],
+      "githubUrl": "https://github.com/naveenkumar982/blog-platform",
+      "demoUrl": "https://naveenkumar982.github.io/blog-platform/",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuCGZoCGvUhtYQFVDVQCMldCzUASiA20QptHRPJzosSDaj4cwiPfPYnnnjH7U4_yrqKA6TOC2ts_CRhERJfC3UIwqYCCgc8pAYQdb2COXtWAiKfpuRQANR7zSxx8lbKtl4lD8EosQLrH_fJ1NlmWBjtFx-DhhkSfdhbceOal3tWxxG4kKhsEV0YUrNCWA-PqbX6ahseXMAnZTHsF31MfSsnYhFgR5M9Em58XIoods_ED3tp2OA_6va_s27p9FVU14HTck7X9IlkzK0Cl",
+      "status": "LIVE",
+      "featured": false,
+      "badge": "Platform",
+      "gridSpan": "md:col-span-6"
+    },
+    {
+      "id": "skypulse",
+      "title": "SkyPulse",
+      "subtitle": "Weather Dashboard",
+      "description": "Real-time atmospheric data processing with 24-hour and 7-day precise forecasting powered by Open-Meteo.",
+      "category": "DevTools",
+      "techTags": ["JS", "REST API"],
+      "githubUrl": "https://github.com/naveenkumar982/weather-dashboard",
+      "demoUrl": "https://naveenkumar982.github.io/weather-dashboard/",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAgTXKMoicc_bSs5wQ-Y8b30sR5Nz9romDkIMj8qYBHhnIcIacb4B7LkB2q2X3_4rbkXOZEgj-9B9pl4wRaeCXZRpr02xnsPhCO_dcXd6i8Lxb7vXY1ZJ7kg5mSCHfG9bHkNn0sK9wug1lHlI491lc-TOsIJE_4yLCdFgaefYSj-ZmpublsSBVZDY72LfrChfXjIyMyriAyCQSrD5Mo06zbfZY_m1cRktzJ2scyDKBo5M8JpfulTmU0U0zgXQaZE9BwMUPm1Ioauksg",
+      "status": "LIVE",
+      "featured": true,
+      "badge": "LIVE NOW",
+      "hasCaseStudy": true,
+      "gridSpan": "md:col-span-6"
+    },
+    {
+      "id": "nexusai",
+      "title": "NexusAI",
+      "subtitle": "Chat Assistant",
+      "description": "High-performance AI interface featuring markdown rendering, model selection, and secure conversation state management.",
+      "category": "AI/ML",
+      "techTags": ["GEMINI", "LLM"],
+      "githubUrl": "https://github.com/naveenkumar982/ai-chat-assistant",
+      "demoUrl": "https://naveenkumar982.github.io/ai-chat-assistant/",
+      "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuCxsxW93_wb63LZltsAHJ4s624V9jy5U1-k6RMVJKEPv7OG-wSWiTiP_pZQOsTxQNS-Ah3u9axdO_ch4oyB-KFcjRnwgLXNavUpuv7mjtCNxsEkuw08uIMzGkTGcbtpVkwQXYLpt3_4EIgl7AIAPFb5KyMizykadd8SEDCpZ_NyrTq-qR4wH6yU-cwoboNNLllmQF65KCalevXlv0H9AvVBdj3axeaVAH203Fu26kIpH92McQXMxzABlv8rUdfB9EKFDFE0jf6P7RF1",
+      "status": "LIVE",
+      "featured": true,
+      "badge": "AI",
+      "gridSpan": "md:col-span-6"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "icon": "terminal",
+      "description": "Flask, FastAPI, Pandas, Scikit-learn. Applied in back-end logic and data processing.",
+      "shortDesc": "FastAPI, Pandas, ML",
+      "category": "Core",
+      "tags": ["Core", "Data"]
+    },
+    {
+      "name": "Docker",
+      "icon": "settings_input_component",
+      "description": "Containerization, Docker Compose, CI/CD pipelines for reliable deployment.",
+      "shortDesc": "CI/CD, Containers",
+      "category": "Infrastructure",
+      "tags": ["Infrastructure"]
+    },
+    {
+      "name": "Machine Learning",
+      "icon": "psychology",
+      "description": "MLflow, MLOps, Model Deployment. Automating intelligence at scale.",
+      "shortDesc": "MLOps, MLflow",
+      "category": "AI",
+      "tags": ["AI"]
+    },
+    {
+      "name": "AWS",
+      "icon": "cloud",
+      "description": "Lambda, S3, Kinesis, ECR. Building resilient cloud-native architectures.",
+      "shortDesc": "Lambda, S3, ECR",
+      "category": "Cloud",
+      "tags": ["Cloud"]
+    },
+    {
+      "name": "DevOps",
+      "icon": "construction",
+      "description": "Terraform, Git, GitHub Actions. Infrastructure as Code and automation.",
+      "shortDesc": "Terraform, GitHub Actions",
+      "category": "Ops",
+      "tags": ["Ops"]
+    },
+    {
+      "name": "JavaScript",
+      "icon": "web",
+      "description": "Modern UI/UX, Chart.js, REST API integrations, and Gemini AI synergy.",
+      "shortDesc": "ES6+, DOM, Chart.js",
+      "category": "Frontend",
+      "tags": ["Frontend", "API"]
+    }
+  ],
+  "architecture": [
+    {
+      "title": "Frontend Logic",
+      "stack": "React / JS Ecosystem",
+      "description": "State management, component architecture, and responsive interactive interfaces optimized for performance."
+    },
+    {
+      "title": "Backend APIs",
+      "stack": "Node.js / Python FastAPI",
+      "description": "RESTful services, GraphQL endpoints, authentication layers, and robust business logic execution."
+    },
+    {
+      "title": "Cloud Infrastructure",
+      "stack": "AWS / Docker / DBs",
+      "description": "Containerized deployment, scalable databases (PostgreSQL/MongoDB), and serverless architecture."
+    }
+  ],
+  "competencies": [
+    {
+      "number": "01",
+      "title": "Backend",
+      "description": "Robust API development with Flask, FastAPI and Node.js. Focus on security and performance."
+    },
+    {
+      "number": "02",
+      "title": "Infrastructure",
+      "description": "Docker-driven development with Terraform and AWS deployments for scalable applications."
+    },
+    {
+      "number": "03",
+      "title": "Intelligence",
+      "description": "Integration of Generative AI and MLflow tracking for data-driven product features."
+    },
+    {
+      "number": "04",
+      "title": "Frontend",
+      "description": "Modern UI/UX with a focus on typography, motion, and high-performance DOM interactions."
+    }
+  ]
+}
